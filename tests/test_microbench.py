@@ -49,7 +49,7 @@ class MicrobenchTests(unittest.TestCase):
         result = microbench.summarize(rows, [{'label': 'base'}, {'label': 'new'}])
         self.assertEqual(result[0]['runs'], 2)
         self.assertEqual(result[0]['median_seconds'], 3)
-        self.assertEqual(result[1]['wall_reduction_percent'], 50)
+        self.assertEqual(result[1]['wall_ratio'], 0.5)
 
 
 if __name__ == '__main__':

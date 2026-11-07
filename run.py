@@ -451,8 +451,8 @@ def report(rows: list[dict], session: Path, status: str) -> None:
     lines = ['# Standalone upstream build benchmark', '', f'Status: {status}', '',
              'Scope: RISC-V cc1 under the selected QEMU; host make/GCC driver/cross binutils.',
              'Configure, source preparation, warmups, validation and coverage are excluded from timing.', '',
-             '| Package | QEMU | Runs | Median wall (s) | Min–max (s) | Stddev (s) | Wall reduction | Speedup |',
-             '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+             '| Package | QEMU | Runs | Median wall (s) | Min–max (s) | Stddev (s) | Wall / baseline |',
+             '| --- | --- | ---: | ---: | ---: | ---: | ---: |']
     stats = []
     notes = []
     consistent = True
@@ -465,14 +465,15 @@ def report(rows: list[dict], session: Path, status: str) -> None:
             median = statistics.median(values)
             if reference is None:
                 reference = median
+            ratio = median / reference
             stat = {'package': package, 'variant': label, 'runs': len(values), 'median_seconds': median,
                     'min_seconds': min(values), 'max_seconds': max(values),
                     'stddev_seconds': statistics.stdev(values) if len(values) > 1 else None,
-                    'wall_reduction_percent': 100 * (1 - median / reference),
-                    'speedup': reference / median}
+                    'wall_ratio': ratio}
             stats.append(stat)
             sd = f"{stat['stddev_seconds']:.3f}" if len(values) > 1 else 'n/a'
-            lines.append(f"| {package} | {label} | {len(values)} | {median:.3f} | {min(values):.3f}–{max(values):.3f} | {sd} | {stat['wall_reduction_percent']:+.2f}% | {reference / median:.3f}x |")
+            lines.append(f"| {package} | {label} | {len(values)} | {median:.3f} | "
+                         f"{min(values):.3f}–{max(values):.3f} | {sd} | {ratio:.3f}x |")
         hashes = {json.dumps(r['artifacts'], sort_keys=True) for r in group}
         same = len(hashes) == 1
         consistent &= same

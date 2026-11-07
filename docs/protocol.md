@@ -18,10 +18,11 @@
 5. Warm up each QEMU, then alternate AB/BA order for two variants. With more
    variants, rotate their order. Retain every sample. Odd pair counts are not
    perfectly balanced; choose an even count when exact order balance matters.
-6. Report sample count, median, range, paired changes, and the scalar control.
-   Wall reduction is `100 * (1 - candidate / reference)`; positive values mean
-   less elapsed time. Avoid conclusions about small differences within observed
-   variation or about application speedup from a focused loop alone.
+6. Report sample count, median, range, paired elapsed-time ratios, and the
+   scalar control. `Wall / baseline` divides each variant's median elapsed time
+   by the baseline median. Ratios below one indicate shorter times. Use observed
+   variation to judge small differences and application workloads to measure
+   application performance.
 7. Keep host-GDB, instruction tracing, and coverage runs out of performance
    statistics. `vsetvli.py --perf` also executes separately after all timings.
    The package runner's optional `--perf` measures an instrumented build; record

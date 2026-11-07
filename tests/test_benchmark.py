@@ -213,8 +213,11 @@ class BenchmarkTests(unittest.TestCase):
                         row('profile', 1000, coverage=True)], Path(tmp), 'complete')
             result = json.loads((Path(tmp) / 'results.json').read_text())
             self.assertEqual(len(result['statistics']), 2)
-            self.assertEqual(result['statistics'][1]['speedup'], 2)
+            self.assertEqual(result['statistics'][1]['wall_ratio'], 0.5)
             self.assertEqual(result['statistics'][0]['runs'], 1)
+            summary = (Path(tmp) / 'summary.md').read_text()
+            self.assertIn('Wall / baseline', summary)
+            self.assertIn('| n/a | 0.500x |', summary)
 
 
 if __name__ == '__main__':
