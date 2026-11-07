@@ -1,0 +1,34 @@
+# Copy this file to *.local.yml. Paths resolve relative to this file.
+# Set QEMU paths here or pass --qemu LABEL=PATH. null affinity inherits the current mask.
+schema: 1
+name: packages-example
+runner: packages
+workloads:
+- sqlite
+- lz4
+- zlib
+- zlib-ng
+reference: baseline
+qemu:
+  baseline:
+    path: null
+    commit: null
+  candidate:
+    path: null
+    commit: null
+host:
+  affinity: null
+build:
+  cross_cc: riscv64-linux-gnu-gcc
+  compiler: rvv
+  jobs: 1
+  march: rv64gcv
+  cflags: ''
+measurement:
+  warmups: 1
+  repetitions: 10
+  timeout: 1800
+storage:
+  data_dir: ../data
+guest:
+  cpu: rv64,v=true,vlen=128,elen=64

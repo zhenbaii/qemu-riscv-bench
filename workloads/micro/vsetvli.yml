@@ -1,0 +1,70 @@
+schema: 1
+id: vsetvli
+kind: micro
+runner: vsetvli
+cpu: rv64,v=true,vlen=128,elen=64
+cases:
+  case5-max:
+    lmul: m1
+    maximum: 16
+    insn: vsetvli t1, zero, e8, m1, tu, mu
+    summed: true
+    mode: max
+    kind: single
+    source_sha256: baf61a19dba3e8a13c8b2e7b9aef77d026407862674fc6035f7c7d1a98c599e5
+  case3-small:
+    lmul: mf4
+    maximum: 4
+    insn: vsetvli t1, a0, e8, mf4, tu, mu
+    summed: true
+    mode: alternating
+    kind: single
+    source_sha256: 5a1e3895f9419f13f9eb9ef30f4c2bcd25a15bfd6fa6598075bc3bc0548aff9b
+  case4-small:
+    lmul: mf4
+    maximum: 4
+    insn: vsetvli zero, a0, e8, mf4, tu, mu
+    summed: false
+    mode: alternating
+    kind: single
+    source_sha256: 382aaee1c4f16b0da8e9fc8481346b9a3c1f378e32d00bdbab1373020932ddcf
+  case3-boundary8:
+    lmul: mf2
+    maximum: 8
+    insn: vsetvli t1, a0, e8, mf2, tu, mu
+    summed: true
+    mode: alternating
+    kind: split
+    source_sha256: 6f8e5e6ca3b607459ab7b178bf055aa2b37329afcca45327a6a293058fa2fac8
+  case3-large:
+    lmul: m1
+    maximum: 16
+    insn: vsetvli t1, a0, e8, m1, tu, mu
+    summed: true
+    mode: alternating
+    kind: split
+    source_sha256: 7af7bb7cb7ea8acc5d63e96842c3957cb4558dab753ab2bb536ddb2336459571
+  case1-register:
+    lmul: mf4
+    maximum: 4
+    insn: vsetvl t1, a0, s2
+    summed: true
+    mode: alternating
+    kind: lookup
+    source_sha256: ef4f5f06441feb407df3f5c93e64317d5032fa286a3df818aa07b0564a20c011
+  case2-x0-x0:
+    lmul: mf4
+    maximum: 4
+    insn: vsetvli zero, zero, e8, mf4, tu, mu
+    summed: false
+    mode: keep
+    kind: lookup
+    source_sha256: 4b10fa157fdd2f5ef8af4e0cfc02986b4d2ac256c4a98b78cb16bda08a0e4e02
+  scalar-control:
+    lmul: null
+    maximum: 4
+    insn: add s1, s1, a0
+    summed: false
+    mode: scalar
+    kind: control
+    source_sha256: 43d2557494d98b2dd572ba8dee3514f546cd5c0552ac5fbd7f431a15e9ff187d

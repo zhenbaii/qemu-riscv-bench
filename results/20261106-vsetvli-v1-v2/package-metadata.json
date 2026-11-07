@@ -1,0 +1,244 @@
+{
+  "schema": 1,
+  "started_utc": "2026-11-06T07:39:47.846347+00:00",
+  "scope": "RISC-V cc1 emulation; host GCC driver, make and cross-binutils",
+  "host": {
+    "system": "Linux",
+    "node": "<hostname omitted>",
+    "release": "6.14.0-37-generic",
+    "version": "#37-Ubuntu SMP PREEMPT_DYNAMIC Fri Nov 14 22:10:32 UTC 2025",
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "affinity": [
+    7
+  ],
+  "qemu": [
+    {
+      "label": "v1",
+      "path": "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+      "sha256": "2df493d116b8375de0ac51de058638c853197944166d8e80db72a8bd08d57c22",
+      "version": "qemu-riscv64 version 11.1.50 (v11.1.0-3513-g77a8f2db05)\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+      "commit": "77a8f2db05602891f59e623995639326bba51f60",
+      "build_metadata": {
+        "commit": "77a8f2db05602891f59e623995639326bba51f60",
+        "ref": "HEAD",
+        "sha256": "2df493d116b8375de0ac51de058638c853197944166d8e80db72a8bd08d57c22",
+        "source": "<workspace>/qemu",
+        "target": "riscv64-linux-user"
+      }
+    },
+    {
+      "label": "v2",
+      "path": "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+      "sha256": "a4260683466098e302fd66bf29488bff830da54b765d469fa43af2be6411f0fd",
+      "version": "qemu-riscv64 version 11.1.50 (v11.1.0-3514-gd6cb1c3fb7)\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+      "commit": "d6cb1c3fb712338bf769ac8cd26b471358db2d15",
+      "build_metadata": {
+        "commit": "d6cb1c3fb712338bf769ac8cd26b471358db2d15",
+        "ref": "HEAD",
+        "sha256": "a4260683466098e302fd66bf29488bff830da54b765d469fa43af2be6411f0fd",
+        "source": "<workspace>/qemu",
+        "target": "riscv64-linux-user"
+      }
+    }
+  ],
+  "coverage_qemu": null,
+  "guest_compiler": {
+    "cc1": "<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/build/gcc/cc1",
+    "sysroot": "<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/empty-runtime",
+    "sha256": "b04db91e42efe2d302fd67d08a3fc8ca79309b9a2e27812e49f977533550c939",
+    "version": "14.2.0",
+    "origin": "upstream GCC built for an RVV host",
+    "source_url": "https://gcc.gnu.org/pub/gcc/releases/gcc-14.2.0/gcc-14.2.0.tar.xz",
+    "source_sha256": "a7b39bc69cbf9e25826c5a60ab26477001f7c08d85cec04bc0e29cabed6f3cc9",
+    "source_sha512": "932bdef0cda94bacedf452ab17f103c0cb511ff2cec55e9112fc0328cbf1d803b42595728ea7b200e0a057c03e85626f937012e49a7515bc5dd256b2bf4bc396",
+    "bootstrap_lock_sha256": "1a8fcfca278ec9b9ad7085683ac388b1f292bc9bf58fd80bf6f94ca41d2e7da6",
+    "configure": [
+      "<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/gcc-14.2.0/configure",
+      "--build=x86_64-linux-gnu",
+      "--host=riscv64-linux-gnu",
+      "--target=riscv64-linux-gnu",
+      "--prefix=<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/install",
+      "--disable-bootstrap",
+      "--disable-multilib",
+      "--disable-nls",
+      "--disable-werror",
+      "--enable-languages=c",
+      "--without-isl",
+      "--disable-libsanitizer",
+      "--disable-libquadmath",
+      "--disable-libgomp",
+      "--disable-libatomic",
+      "--with-gmp-include=<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/guest/usr/include/riscv64-linux-gnu",
+      "--with-gmp-lib=<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/guest/usr/lib/riscv64-linux-gnu",
+      "--with-mpfr-include=<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/guest/usr/include",
+      "--with-mpfr-lib=<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/guest/usr/lib/riscv64-linux-gnu",
+      "--with-mpc-include=<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/guest/usr/include",
+      "--with-mpc-lib=<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/guest/usr/lib/riscv64-linux-gnu"
+    ],
+    "build_command": [
+      "make",
+      "-j8",
+      "EXTRA_BUILD_FLAGS=CFLAGS=-O2 CXXFLAGS=-O2 LDFLAGS=",
+      "all-gcc"
+    ],
+    "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -I<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/guest/usr/include/riscv64-linux-gnu",
+    "ldflags": "-static",
+    "log": "<workspace>/research/standalone-build-benchmark/cache/rvv-gcc-14.2.0/build.log",
+    "cross_cc_sha256": "10b50b98615a5162b83cf11ccefcf93de50e92fd7eb86b0fc5854015c4375536",
+    "script_sha256": "10c131e50d14d1de7ba0772294209803d9bc45f207654f7f19dfbe22b9930c67",
+    "bootstrap_lock": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/cache/rvv-gcc-14.2.0/bootstrap.lock.json",
+    "runtime_tree_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "version_banner": "GNU C17 (GCC) version 14.2.0 (riscv64-linux-gnu)\n\tcompiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version none\nGGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072\nCompiler executable checksum: 8b369a7e321281ec995b66f22a9b8579\n"
+  },
+  "host_cross_toolchain": {
+    "path": "/usr/bin/riscv64-linux-gnu-gcc-14",
+    "sha256": "10b50b98615a5162b83cf11ccefcf93de50e92fd7eb86b0fc5854015c4375536",
+    "version": "14.2.0",
+    "machine": "riscv64-linux-gnu",
+    "tools": {
+      "AR": "/usr/bin/riscv64-linux-gnu-ar",
+      "RANLIB": "/usr/bin/riscv64-linux-gnu-ranlib",
+      "NM": "/usr/bin/riscv64-linux-gnu-nm",
+      "STRIP": "/usr/bin/riscv64-linux-gnu-strip"
+    },
+    "runtime": "/usr/riscv64-linux-gnu",
+    "native_cc1": "/usr/libexec/gcc-cross/riscv64-linux-gnu/14/cc1",
+    "builtin_includes": [
+      "/usr/lib/gcc-cross/riscv64-linux-gnu/14/include",
+      "/usr/riscv64-linux-gnu/include"
+    ],
+    "builtin_include_sha256": {
+      "/usr/lib/gcc-cross/riscv64-linux-gnu/14/include": "8d010e8dba2af194409551b0552df27e9870d0a37f8dce1f5532860a074dafad",
+      "/usr/riscv64-linux-gnu/include": "bd34be3b7b7c7984719a6ff257205d5d86dd07356b00352bcb37ee1c346469a1"
+    },
+    "native_cc1_sha256": "735733a5ece1714bc85ece34063f9b324f000c94df876fce9ff60bf786e6fd77",
+    "default_pic_flags": [
+      "-fPIE"
+    ],
+    "tools_sha256": {
+      "AR": "9cfb6658d6c02942a9eef69965b6e50f124a91512a31a866e440f7a6114c078e",
+      "RANLIB": "aae459cf490e9cdbdb671f667e8fdddb98c7dbac1930394e051058261cb08315",
+      "NM": "4c5723bd3e9634f7450c263e63bcac9e968b68a73fd79a9047fecd19082e548c",
+      "STRIP": "d4dd505644250e43fd3eaa64d4d8aff8956b7ce601ac02320d0eaef1830c89af"
+    },
+    "subtools": {
+      "as": {
+        "path": "/usr/bin/riscv64-linux-gnu-as",
+        "sha256": "b8e066fe886860de2af8d029b349ab0925e261721987b930c226497aa36e4cdf"
+      },
+      "ld": {
+        "path": "/usr/bin/riscv64-linux-gnu-ld.bfd",
+        "sha256": "55691a70cbc81a5979b33658e5845154cac399312c19785a249cc06304edb807"
+      },
+      "collect2": {
+        "path": "/usr/libexec/gcc-cross/riscv64-linux-gnu/14/collect2",
+        "sha256": "ace3ee4cfa5973b339f2ce2a11e43aea098a0603b7f20bc3aadf30bedf0b6f61"
+      }
+    }
+  },
+  "sources": {
+    "zlib": {
+      "kind": "upstream",
+      "version": "1.3.1",
+      "url": "https://zlib.net/fossils/zlib-1.3.1.tar.gz",
+      "archive_sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+      "tree_sha256": "f16fa606ce8be9f25e1e92551d1c803e55b15b887715d0a1b5abb8e010f410dc"
+    }
+  },
+  "arguments": {
+    "packages": [
+      "zlib"
+    ],
+    "list": false,
+    "qemu": [
+      "v1=<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+      "v2=<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64"
+    ],
+    "qemu_commit": [],
+    "cross_cc": "riscv64-linux-gnu-gcc",
+    "guest_cc1": null,
+    "guest_sysroot": null,
+    "compiler": "rvv",
+    "bootstrap_jobs": 4,
+    "toolchain_lock": null,
+    "data_dir": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data",
+    "source_dir": null,
+    "offline": true,
+    "prepare_only": false,
+    "repetitions": 3,
+    "warmups": 1,
+    "jobs": 1,
+    "cpu": "rv64,v=true,vlen=128,elen=64",
+    "march": "rv64gcv",
+    "cflags": "",
+    "timeout": 1800,
+    "affinity": "7",
+    "perf": false,
+    "profile_vset": false,
+    "profile_qemu": null,
+    "plugin_include": "<workspace>/research/standalone-build-benchmark/vsetvli-20261104/qemu/include/plugins",
+    "microbench": false,
+    "micro_min_seconds": 2.0,
+    "micro_iterations": null
+  },
+  "scripts_sha256": {
+    "toolchain.py": "f700f84078c420a0c81e61ad7489a5187d767aba5b54d449e7949859ed36e551",
+    "packages.json": "4eeebdaae05a8e2408d99049eb5cc4a5f4f1633cb49a82b5c14c571fd04b1f6f",
+    "run.py": "7ee7dfdf13563399b7c76df3e32b45c2545c9f3968ea59ec29ee7f86205266a0",
+    "prepare_rvv_compiler.py": "0b50b45efd929b3ecac27bf8f63c1df712ecd775087481106e7e48e8d13e26c7",
+    "microbench.S": "557db129fc6624c6f04cb7f734cc89bc9891bcab6e7dc905dfe8780ddca5c1c1",
+    "vset_count.c": "b66b8ad7c5511ea0e8e9eb9d2bac9a15f473c2683a3778f34ea8b7b61ba15ede",
+    "compiler.py": "77e217dc169c33a8f5e6fdf054afc903cf6a0fc8431f77ac95f86b3581bea8ca",
+    "microbench.py": "f44baf17d0337297e3ae14961a50efd9888bfa372c76da9cb5ef1b72a8bd35c3"
+  },
+  "target_runtime_sha256": "7b2750746d902f1bc6c57962ca4bccc6e822f72363b9a10fd261d8ae4172b210",
+  "status": "complete",
+  "host_environment_before": {
+    "utc": "2026-11-06T07:39:47.935981+00:00",
+    "cpus": {
+      "7": {
+        "topology/core_id": "11",
+        "topology/thread_siblings_list": "7,17",
+        "cpufreq/scaling_driver": "amd-pstate-epp",
+        "cpufreq/scaling_governor": "powersave",
+        "cpufreq/scaling_min_freq": "623000",
+        "cpufreq/scaling_max_freq": "3324000",
+        "cpufreq/scaling_cur_freq": "3282414",
+        "cpufreq/energy_performance_preference": "balance_performance"
+      }
+    },
+    "boost": "1",
+    "smt_active": "1",
+    "loadavg": "1.73 1.68 1.34 2/2088 53580",
+    "memory_pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=29\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=20",
+    "ac_online": {
+      "/sys/class/power_supply/ADP0/online": "1"
+    }
+  },
+  "cpu_model": "AMD Ryzen AI 9 H 365 w/ Radeon 880M",
+  "finished_utc": "2026-11-06T07:50:56.427190+00:00",
+  "host_environment_after": {
+    "utc": "2026-11-06T07:50:56.427382+00:00",
+    "cpus": {
+      "7": {
+        "topology/core_id": "11",
+        "topology/thread_siblings_list": "7,17",
+        "cpufreq/scaling_driver": "amd-pstate-epp",
+        "cpufreq/scaling_governor": "powersave",
+        "cpufreq/scaling_min_freq": "623000",
+        "cpufreq/scaling_max_freq": "3324000",
+        "cpufreq/scaling_cur_freq": "1409212",
+        "cpufreq/energy_performance_preference": "balance_performance"
+      }
+    },
+    "boost": "1",
+    "smt_active": "1",
+    "loadavg": "1.21 1.28 1.30 1/2050 56418",
+    "memory_pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=29\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=20",
+    "ac_online": {
+      "/sys/class/power_supply/ADP0/online": "1"
+    }
+  }
+}

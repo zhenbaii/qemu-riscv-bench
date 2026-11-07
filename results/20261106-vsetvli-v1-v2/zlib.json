@@ -1,0 +1,326 @@
+{
+  "status": "complete",
+  "statistics": [
+    {
+      "package": "zlib",
+      "variant": "v1",
+      "runs": 3,
+      "median_seconds": 70.0128253010007,
+      "min_seconds": 69.91741529100182,
+      "max_seconds": 70.76802126599796,
+      "stddev_seconds": 0.466003315484497,
+      "wall_reduction_percent": 0.0,
+      "speedup": 1.0
+    },
+    {
+      "package": "zlib",
+      "variant": "v2",
+      "runs": 3,
+      "median_seconds": 69.86239508599829,
+      "min_seconds": 69.66590636399997,
+      "max_seconds": 69.9668875110001,
+      "stddev_seconds": 0.15281586719797005,
+      "wall_reduction_percent": 0.21486094062863614,
+      "speedup": 1.0021532358691287
+    }
+  ],
+  "artifacts_identical": true,
+  "runs": [
+    {
+      "wall_seconds": 93.569728303999,
+      "started_utc": "2026-11-06T07:40:00.222308+00:00",
+      "started_monotonic_seconds": 17786.997649261,
+      "finished_monotonic_seconds": 17880.567377565,
+      "user_seconds": 91.201716,
+      "sys_seconds": 1.489818,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v1",
+      "iteration": 1,
+      "warmup": true,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-warmup-01-v1",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 90.4677828749991,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    },
+    {
+      "wall_seconds": 70.36299459200018,
+      "started_utc": "2026-11-06T07:41:44.118228+00:00",
+      "started_monotonic_seconds": 17890.893565858,
+      "finished_monotonic_seconds": 17961.25656045,
+      "user_seconds": 69.272546,
+      "sys_seconds": 0.9599289999999998,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v2",
+      "iteration": 1,
+      "warmup": true,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-warmup-01-v2",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 68.74710093400427,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    },
+    {
+      "wall_seconds": 70.76802126599796,
+      "started_utc": "2026-11-06T07:43:04.806064+00:00",
+      "started_monotonic_seconds": 17971.58140234,
+      "finished_monotonic_seconds": 18042.349423606,
+      "user_seconds": 69.61835200000002,
+      "sys_seconds": 0.9624820000000005,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v1",
+      "iteration": 1,
+      "warmup": false,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-run-01-v1",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 69.18094626700986,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    },
+    {
+      "wall_seconds": 69.9668875110001,
+      "started_utc": "2026-11-06T07:44:25.847637+00:00",
+      "started_monotonic_seconds": 18052.622977445,
+      "finished_monotonic_seconds": 18122.589864956,
+      "user_seconds": 68.850505,
+      "sys_seconds": 0.9514499999999995,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v2",
+      "iteration": 1,
+      "warmup": false,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-run-01-v2",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 68.36406967099538,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    },
+    {
+      "wall_seconds": 69.66590636399997,
+      "started_utc": "2026-11-06T07:45:46.038144+00:00",
+      "started_monotonic_seconds": 18132.813482988,
+      "finished_monotonic_seconds": 18202.479389352,
+      "user_seconds": 68.52220400000004,
+      "sys_seconds": 0.9861060000000004,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v2",
+      "iteration": 2,
+      "warmup": false,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-run-02-v2",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 68.06372192399431,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    },
+    {
+      "wall_seconds": 70.0128253010007,
+      "started_utc": "2026-11-06T07:47:06.029418+00:00",
+      "started_monotonic_seconds": 18212.804756802,
+      "finished_monotonic_seconds": 18282.817582103,
+      "user_seconds": 68.88714299999998,
+      "sys_seconds": 1.0075440000000002,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v1",
+      "iteration": 2,
+      "warmup": false,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-run-02-v1",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 68.446717093997,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    },
+    {
+      "wall_seconds": 69.91741529100182,
+      "started_utc": "2026-11-06T07:48:26.368517+00:00",
+      "started_monotonic_seconds": 18293.14385732,
+      "finished_monotonic_seconds": 18363.061272611,
+      "user_seconds": 68.77328,
+      "sys_seconds": 1.0323410000000006,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v1",
+      "iteration": 3,
+      "warmup": false,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-run-03-v1",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 68.36152632399899,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    },
+    {
+      "wall_seconds": 69.86239508599829,
+      "started_utc": "2026-11-06T07:49:46.509007+00:00",
+      "started_monotonic_seconds": 18373.284343978,
+      "finished_monotonic_seconds": 18443.146739064,
+      "user_seconds": 68.7543189999999,
+      "sys_seconds": 0.9918759999999995,
+      "returncode": 0,
+      "package": "zlib",
+      "variant": "v2",
+      "iteration": 3,
+      "warmup": false,
+      "coverage_run": false,
+      "directory": "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/runs/20261106T073947.845389Z/zlib-run-03-v2",
+      "cc1_invocations": 19,
+      "cc1_wall_sum": 68.26666695099266,
+      "artifacts": {
+        "libz.a": {
+          "sha256": "98b38383ace4285feedba3d7e5fafe2fc1fd92cb0875ffea27a5436eb0001e34",
+          "bytes": 303916
+        },
+        "example": {
+          "sha256": "b56f4c5736d4fa34553a8be6c158f935080367a1a4330fb7a77199983415f741",
+          "bytes": 86088
+        },
+        "minigzip": {
+          "sha256": "e79a481ca2cea528b93cc2bdc38175dfee23117dd0b212c8e5babd4ef1511cc6",
+          "bytes": 82120
+        }
+      },
+      "configure_timed": false,
+      "build_argv": [
+        "make",
+        "-j1"
+      ],
+      "cflags": "-O2 -g0 -march=rv64gcv -mabi=lp64d -frandom-seed=qemu-build-benchmark -ffile-prefix-map=<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/package-data/work/zlib=/benchmark/source "
+    }
+  ]
+}

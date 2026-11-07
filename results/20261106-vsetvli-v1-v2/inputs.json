@@ -1,0 +1,202 @@
+{
+  "case5-max": {
+    "lmul": "m1",
+    "maximum": 16,
+    "insn": "vsetvli t1, zero, e8, m1, tu, mu",
+    "summed": true,
+    "mode": "max",
+    "kind": "single",
+    "source_sha256": "baf61a19dba3e8a13c8b2e7b9aef77d026407862674fc6035f7c7d1a98c599e5",
+    "guest_sha256": "a5bb3f98c5ef78412816504b991a4a6904dc6f6c49bc8d5c647df5bc2a783cff",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73728,
+      "vector_successor": 73732
+    }
+  },
+  "case3-small": {
+    "lmul": "mf4",
+    "maximum": 4,
+    "insn": "vsetvli t1, a0, e8, mf4, tu, mu",
+    "summed": true,
+    "mode": "alternating",
+    "kind": "single",
+    "source_sha256": "5a1e3895f9419f13f9eb9ef30f4c2bcd25a15bfd6fa6598075bc3bc0548aff9b",
+    "guest_sha256": "254d2b9acddd6382136820110a4d640d3201650fa415c4498d1bc28d66483ab9",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73732,
+      "vector_successor": 73736
+    }
+  },
+  "case4-small": {
+    "lmul": "mf4",
+    "maximum": 4,
+    "insn": "vsetvli zero, a0, e8, mf4, tu, mu",
+    "summed": false,
+    "mode": "alternating",
+    "kind": "single",
+    "source_sha256": "382aaee1c4f16b0da8e9fc8481346b9a3c1f378e32d00bdbab1373020932ddcf",
+    "guest_sha256": "fc37fc0f8e62b137aaeef60e8a39b1be7084b370d728579209757989cf2dc114",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73732,
+      "vector_successor": 73736
+    }
+  },
+  "case3-boundary8": {
+    "lmul": "mf2",
+    "maximum": 8,
+    "insn": "vsetvli t1, a0, e8, mf2, tu, mu",
+    "summed": true,
+    "mode": "alternating",
+    "kind": "split",
+    "source_sha256": "6f8e5e6ca3b607459ab7b178bf055aa2b37329afcca45327a6a293058fa2fac8",
+    "guest_sha256": "37920d3c90dbc9cc949507469008ed1efb8ba81b0db67ca75e043c66e630a7ee",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73732,
+      "vector_successor": 73736
+    }
+  },
+  "case3-large": {
+    "lmul": "m1",
+    "maximum": 16,
+    "insn": "vsetvli t1, a0, e8, m1, tu, mu",
+    "summed": true,
+    "mode": "alternating",
+    "kind": "split",
+    "source_sha256": "7af7bb7cb7ea8acc5d63e96842c3957cb4558dab753ab2bb536ddb2336459571",
+    "guest_sha256": "8aa2685fc9afa2d23ca586a9bd2713feb020a9a561df252684acbccfcd2473b8",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73732,
+      "vector_successor": 73736
+    }
+  },
+  "case1-register": {
+    "lmul": "mf4",
+    "maximum": 4,
+    "insn": "vsetvl t1, a0, s2",
+    "summed": true,
+    "mode": "alternating",
+    "kind": "lookup",
+    "source_sha256": "ef4f5f06441feb407df3f5c93e64317d5032fa286a3df818aa07b0564a20c011",
+    "guest_sha256": "2e24fc046b3edc07233aef7d9d6a2c7993be7ef9c497d71bc6dec48bc1d49a1c",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73732,
+      "vector_successor": 73736
+    }
+  },
+  "case2-x0-x0": {
+    "lmul": "mf4",
+    "maximum": 4,
+    "insn": "vsetvli zero, zero, e8, mf4, tu, mu",
+    "summed": false,
+    "mode": "keep",
+    "kind": "lookup",
+    "source_sha256": "4b10fa157fdd2f5ef8af4e0cfc02986b4d2ac256c4a98b78cb16bda08a0e4e02",
+    "guest_sha256": "2322a5ef86cc1a17122ba14f05293c2c10c451cf3c79482207a55f116df520bf",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73728,
+      "vector_successor": 73732
+    }
+  },
+  "scalar-control": {
+    "lmul": null,
+    "maximum": 4,
+    "insn": "add s1, s1, a0",
+    "summed": false,
+    "mode": "scalar",
+    "kind": "control",
+    "source_sha256": "43d2557494d98b2dd572ba8dee3514f546cd5c0552ac5fbd7f431a15e9ff187d",
+    "guest_sha256": "9417b82a6a99c9c19954760f51a81de216ed72c536da32aa1adee661305f26dd",
+    "compile_command": [
+      "riscv64-linux-gnu-gcc",
+      "-static",
+      "-nostdlib",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "-o",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+      "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.S"
+    ],
+    "symbols": {
+      "benchmark_loop": 73728,
+      "vector_config": 73732,
+      "vector_successor": 73736
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "iterations": 37,
+  "target_successor_counts": [
+    {
+      "run": "case1-register-v1",
+      "helper": 37,
+      "state_lookup": 38,
+      "dispatcher": 1
+    },
+    {
+      "run": "case1-register-v2",
+      "helper": 37,
+      "state_lookup": 38,
+      "dispatcher": 1
+    },
+    {
+      "run": "case2-x0-x0-v1",
+      "helper": 37,
+      "state_lookup": 38,
+      "dispatcher": 1
+    },
+    {
+      "run": "case2-x0-x0-v2",
+      "helper": 37,
+      "state_lookup": 38,
+      "dispatcher": 1
+    },
+    {
+      "run": "case3-boundary8-v1",
+      "helper": 0,
+      "state_lookup": 2,
+      "dispatcher": 2
+    },
+    {
+      "run": "case3-boundary8-v2",
+      "helper": 0,
+      "state_lookup": 2,
+      "dispatcher": 2
+    },
+    {
+      "run": "case3-large-v1",
+      "helper": 0,
+      "state_lookup": 2,
+      "dispatcher": 2
+    },
+    {
+      "run": "case3-large-v2",
+      "helper": 0,
+      "state_lookup": 2,
+      "dispatcher": 2
+    },
+    {
+      "run": "case3-small-v1",
+      "helper": 0,
+      "state_lookup": 2,
+      "dispatcher": 2
+    },
+    {
+      "run": "case3-small-v2",
+      "helper": 0,
+      "state_lookup": 1,
+      "dispatcher": 1
+    },
+    {
+      "run": "case4-small-v1",
+      "helper": 0,
+      "state_lookup": 2,
+      "dispatcher": 2
+    },
+    {
+      "run": "case4-small-v2",
+      "helper": 0,
+      "state_lookup": 1,
+      "dispatcher": 1
+    },
+    {
+      "run": "case5-max-v1",
+      "helper": 0,
+      "state_lookup": 1,
+      "dispatcher": 1
+    },
+    {
+      "run": "case5-max-v2",
+      "helper": 0,
+      "state_lookup": 1,
+      "dispatcher": 1
+    }
+  ],
+  "method": "Native GDB entries; state_lookup counts get_tb_cpu_state calls in the normal lookup paths of these exception-free fixtures; dispatcher counts cpu_tb_exec entries.",
+  "timing_usable": false
+}

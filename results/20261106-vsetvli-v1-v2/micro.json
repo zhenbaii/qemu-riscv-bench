@@ -1,0 +1,4181 @@
+{
+  "status": "complete",
+  "cpu_affinity": [
+    7
+  ],
+  "smt_sibling": 17,
+  "cpu": "rv64,v=true,vlen=128,elen=64",
+  "warmups": 1,
+  "measured_pairs": 9,
+  "order": "AB/BA alternating",
+  "outliers_removed": 0,
+  "timed_instrumentation": "none",
+  "runs": [
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.60555283499707,
+      "cpu_seconds": 0.605224,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6069858140035649,
+      "cpu_seconds": 0.6066620000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6067052479993436,
+      "cpu_seconds": 0.6063940000000001,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6043882480007596,
+      "cpu_seconds": 0.6041070000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6434034230005636,
+      "cpu_seconds": 0.6430350000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6087754239997594,
+      "cpu_seconds": 0.6084429999999998,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6058844260005571,
+      "cpu_seconds": 0.6055820000000008,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6079711040001712,
+      "cpu_seconds": 0.6075739999999998,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6055056270015484,
+      "cpu_seconds": 0.605148,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6055384860010236,
+      "cpu_seconds": 0.6051960000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6124465640023118,
+      "cpu_seconds": 0.6120870000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6055642779974733,
+      "cpu_seconds": 0.6052640000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6051056139986031,
+      "cpu_seconds": 0.6048050000000004,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6073536569965654,
+      "cpu_seconds": 0.6070820000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6067078359992593,
+      "cpu_seconds": 0.6063420000000004,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6071259109994571,
+      "cpu_seconds": 0.6068419999999987,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.608423583998956,
+      "cpu_seconds": 0.6081550000000013,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6105821230012225,
+      "cpu_seconds": 0.610202,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "pair": 9,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.0306640770031663,
+      "cpu_seconds": 1.0304119999999983,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0031442549989151,
+      "cpu_seconds": 1.002943999999999,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0034389880020171,
+      "cpu_seconds": 1.0031689999999982,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.0302759100013645,
+      "cpu_seconds": 1.0300520000000009,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.0442443580031977,
+      "cpu_seconds": 1.0439770000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0042392310024297,
+      "cpu_seconds": 1.0039750000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0275365399975271,
+      "cpu_seconds": 1.0272219999999992,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.0309502920026716,
+      "cpu_seconds": 1.0307189999999966,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.028517668000859,
+      "cpu_seconds": 1.028265,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0035321610012033,
+      "cpu_seconds": 1.003261000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0045423179981299,
+      "cpu_seconds": 1.004261000000001,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.0308116199994402,
+      "cpu_seconds": 1.0304000000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.026959345999785,
+      "cpu_seconds": 1.0267400000000013,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0030788510011917,
+      "cpu_seconds": 1.0028499999999987,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0033305739998468,
+      "cpu_seconds": 1.003110000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.03153906100124,
+      "cpu_seconds": 1.0312329999999983,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.031415103996551,
+      "cpu_seconds": 1.0311129999999997,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.004291289998946,
+      "cpu_seconds": 1.004061999999996,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "pair": 9,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.019240143999923,
+      "cpu_seconds": 1.019080999999999,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9870229699990887,
+      "cpu_seconds": 0.9867599999999958,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9860692250003922,
+      "cpu_seconds": 0.9858189999999962,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0217200650004088,
+      "cpu_seconds": 1.0215150000000048,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0196688110008836,
+      "cpu_seconds": 1.0194189999999912,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9864153799971973,
+      "cpu_seconds": 0.9861169999999969,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9890952129971993,
+      "cpu_seconds": 0.98884,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.003077908000705,
+      "cpu_seconds": 1.0028449999999975,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0211428490001708,
+      "cpu_seconds": 1.020884000000004,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9860231640013808,
+      "cpu_seconds": 0.9857469999999956,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.986813131999952,
+      "cpu_seconds": 0.986562999999996,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0198826790001476,
+      "cpu_seconds": 1.0195700000000059,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0164705630013486,
+      "cpu_seconds": 1.0162240000000033,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9866725329993642,
+      "cpu_seconds": 0.9864459999999939,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9879177369984973,
+      "cpu_seconds": 0.9877200000000008,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0127220049980679,
+      "cpu_seconds": 1.0124550000000054,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0065340619985363,
+      "cpu_seconds": 1.0062459999999975,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9865581349986314,
+      "cpu_seconds": 0.9863070000000038,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 9,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9163930969989451,
+      "cpu_seconds": 0.9161549999999995,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9199086299995543,
+      "cpu_seconds": 0.9196060000000026,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9149339230025362,
+      "cpu_seconds": 0.914675999999994,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9172307879998698,
+      "cpu_seconds": 0.9169969999999985,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9160532979985874,
+      "cpu_seconds": 0.9158300000000055,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9143762479980069,
+      "cpu_seconds": 0.9141479999999939,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9157810309989145,
+      "cpu_seconds": 0.9155139999999841,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9168197470025916,
+      "cpu_seconds": 0.9166770000000015,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.91728839300049,
+      "cpu_seconds": 0.9171180000000013,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9161735899979249,
+      "cpu_seconds": 0.9159250000000007,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9182800849994237,
+      "cpu_seconds": 0.9180340000000098,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9175191399990581,
+      "cpu_seconds": 0.9173259999999925,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9190434669981187,
+      "cpu_seconds": 0.9188449999999991,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9171242020020145,
+      "cpu_seconds": 0.9169580000000075,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9168869429995539,
+      "cpu_seconds": 0.9166660000000105,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9174968279985478,
+      "cpu_seconds": 0.9173070000000002,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9189465290000953,
+      "cpu_seconds": 0.9187900000000008,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9150693529991258,
+      "cpu_seconds": 0.9148380000000048,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "pair": 9,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.9191787189993192,
+      "cpu_seconds": 0.9189599999999994,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.91749242899823,
+      "cpu_seconds": 0.9172939999999946,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9168124079988047,
+      "cpu_seconds": 0.9165810000000064,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.9183208920003381,
+      "cpu_seconds": 0.9181569999999996,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.9158464860011009,
+      "cpu_seconds": 0.9156569999999946,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9180101159981859,
+      "cpu_seconds": 0.9178529999999904,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.917686128999776,
+      "cpu_seconds": 0.9175040000000025,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.919244456999877,
+      "cpu_seconds": 0.9190349999999929,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.917245272998116,
+      "cpu_seconds": 0.9169939999999971,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9196539320000738,
+      "cpu_seconds": 0.9193860000000023,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9191143850002845,
+      "cpu_seconds": 0.918857000000009,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.9195400860007794,
+      "cpu_seconds": 0.9193249999999975,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.9160383149974223,
+      "cpu_seconds": 0.9157889999999912,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9175707229987893,
+      "cpu_seconds": 0.9168530000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9218748979983502,
+      "cpu_seconds": 0.920035999999991,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.918635923997499,
+      "cpu_seconds": 0.916872000000007,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.9228839600000356,
+      "cpu_seconds": 0.921093999999995,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9186499629977334,
+      "cpu_seconds": 0.9168689999999908,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "pair": 9,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.0959976249978354,
+      "cpu_seconds": 1.0940830000000041,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.0970117539982311,
+      "cpu_seconds": 1.0952129999999864,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.0953560210000433,
+      "cpu_seconds": 1.093459000000005,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.096781872001884,
+      "cpu_seconds": 1.0950559999999976,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.0952098929992644,
+      "cpu_seconds": 1.0934780000000026,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.0975691659987206,
+      "cpu_seconds": 1.095802999999993,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.0947744500008412,
+      "cpu_seconds": 1.0930649999999993,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.0996912730006443,
+      "cpu_seconds": 1.0979910000000022,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.0948016479997023,
+      "cpu_seconds": 1.093165000000001,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.09595345499838,
+      "cpu_seconds": 1.0943380000000051,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.0973030650020519,
+      "cpu_seconds": 1.0956519999999874,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.094914613000583,
+      "cpu_seconds": 1.0932390000000047,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.2311916619983094,
+      "cpu_seconds": 1.2293779999999979,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.095397511999181,
+      "cpu_seconds": 1.0938470000000005,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.095851355999912,
+      "cpu_seconds": 1.0943340000000084,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.095290806999401,
+      "cpu_seconds": 1.0937339999999958,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.0959112649979943,
+      "cpu_seconds": 1.094398999999994,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.0961675529979402,
+      "cpu_seconds": 1.0946130000000078,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "pair": 9,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1056188850016042,
+      "cpu_seconds": 1.1041700000000063,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1585810710021178,
+      "cpu_seconds": 1.1570999999999956,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1060993679966487,
+      "cpu_seconds": 1.1047140000000044,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1073421590008365,
+      "cpu_seconds": 1.105955000000005,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1046310069978063,
+      "cpu_seconds": 1.10328500000001,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1047621510006138,
+      "cpu_seconds": 1.1034019999999778,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.110752970998874,
+      "cpu_seconds": 1.1094230000000103,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.107891624000331,
+      "cpu_seconds": 1.1065519999999875,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.230312199000764,
+      "cpu_seconds": 1.2289210000000177,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1075467230002687,
+      "cpu_seconds": 1.1062340000000117,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.106529232001776,
+      "cpu_seconds": 1.1052819999999994,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1151144169998588,
+      "cpu_seconds": 1.113812999999993,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.120876565000799,
+      "cpu_seconds": 1.1195700000000173,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1082357350023813,
+      "cpu_seconds": 1.1070219999999793,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1043812059979246,
+      "cpu_seconds": 1.1031190000000068,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1045412900020892,
+      "cpu_seconds": 1.1033589999999962,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1031104139983654,
+      "cpu_seconds": 1.101923000000017,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1023160609984188,
+      "cpu_seconds": 1.1011929999999706,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "pair": 9,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.29388147500139894,
+      "cpu_seconds": 0.2933220000000084,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 1,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.29338471699884394,
+      "cpu_seconds": 0.2925650000000066,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 1,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.2935905430022103,
+      "cpu_seconds": 0.2930089999999941,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 2,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.2950179149993346,
+      "cpu_seconds": 0.294470000000005,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 2,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.2940628110009129,
+      "cpu_seconds": 0.29347999999999463,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 3,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.2945797610009322,
+      "cpu_seconds": 0.2939590000000074,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 3,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.2948023850003665,
+      "cpu_seconds": 0.2943199999999866,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 4,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.29607833200134337,
+      "cpu_seconds": 0.2955809999999883,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 4,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.29436480199728976,
+      "cpu_seconds": 0.29379100000002434,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 5,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.29369016399868997,
+      "cpu_seconds": 0.29310899999997025,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 5,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.29554391500278143,
+      "cpu_seconds": 0.29498099999999894,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 6,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.29512157299905084,
+      "cpu_seconds": 0.29455600000002513,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 6,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.2935882589990797,
+      "cpu_seconds": 0.2930199999999908,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 7,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.2944282039970858,
+      "cpu_seconds": 0.29386100000000137,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 7,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.29465758099831874,
+      "cpu_seconds": 0.29410800000000276,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 8,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.29407786799856694,
+      "cpu_seconds": 0.29350900000001734,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 8,
+      "position": 2
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.29415087400047923,
+      "cpu_seconds": 0.29358399999998724,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 9,
+      "position": 1
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.29460855900106253,
+      "cpu_seconds": 0.29402099999999964,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "pair": 9,
+      "position": 2
+    }
+  ],
+  "calibration": [
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.008719090001250152,
+      "cpu_seconds": 0.008279,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "1000000"
+      ],
+      "output_sha256": "d23d25c74f4c9834b7942d368015640c3adc402e7687427b1638653ba4655f61"
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.008639595998829463,
+      "cpu_seconds": 0.008246,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "1000000"
+      ],
+      "output_sha256": "d23d25c74f4c9834b7942d368015640c3adc402e7687427b1638653ba4655f61"
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.012511942000855925,
+      "cpu_seconds": 0.012242000000000343,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "1000000"
+      ],
+      "output_sha256": "af80567e1871b3940083b12dc3e78db9519f596f7167e96239511789d465c11c"
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.012067400002706563,
+      "cpu_seconds": 0.011769000000000841,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "1000000"
+      ],
+      "output_sha256": "af80567e1871b3940083b12dc3e78db9519f596f7167e96239511789d465c11c"
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.012543336997623555,
+      "cpu_seconds": 0.012241999999995506,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "1000000"
+      ],
+      "output_sha256": "8defba18036b9d36cf0ba5cad085b345fc388b880d806e3ca0d1252b29614afa"
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.012147101999289589,
+      "cpu_seconds": 0.011814000000004682,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "1000000"
+      ],
+      "output_sha256": "8defba18036b9d36cf0ba5cad085b345fc388b880d806e3ca0d1252b29614afa"
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.008144355000695214,
+      "cpu_seconds": 0.007851999999993212,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "1000000"
+      ],
+      "output_sha256": "df3da9158c7cbfacef5209ecec7ddd1aa2044bb5bb534d9bf9e754a1b8b4d53f"
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.007863824001105968,
+      "cpu_seconds": 0.007555000000007583,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "1000000"
+      ],
+      "output_sha256": "df3da9158c7cbfacef5209ecec7ddd1aa2044bb5bb534d9bf9e754a1b8b4d53f"
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.007972717998200096,
+      "cpu_seconds": 0.0076709999999891865,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "1000000"
+      ],
+      "output_sha256": "ea8de427672f97716870d89a18bad5f2a207a268e866fb33fa81a16130f87efa"
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.007682774998102104,
+      "cpu_seconds": 0.0074529999999941865,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "1000000"
+      ],
+      "output_sha256": "ea8de427672f97716870d89a18bad5f2a207a268e866fb33fa81a16130f87efa"
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.024631462001707405,
+      "cpu_seconds": 0.024270999999994325,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "1000000"
+      ],
+      "output_sha256": "af80567e1871b3940083b12dc3e78db9519f596f7167e96239511789d465c11c"
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.02434240000002319,
+      "cpu_seconds": 0.024046000000008172,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "1000000"
+      ],
+      "output_sha256": "af80567e1871b3940083b12dc3e78db9519f596f7167e96239511789d465c11c"
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.026800476996868383,
+      "cpu_seconds": 0.02644400000000552,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "1000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a"
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.02631685300002573,
+      "cpu_seconds": 0.026060999999996448,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "1000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a"
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 1000000,
+      "wall_seconds": 0.0026037239986180793,
+      "cpu_seconds": 0.002297999999999134,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "1000000"
+      ],
+      "output_sha256": "5dd43b7ba2e249315c492ab2241e92dfa5a381acbebc47a3f5d58827f066269c"
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 1000000,
+      "wall_seconds": 0.0022151660014060326,
+      "cpu_seconds": 0.001990000000009373,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "1000000"
+      ],
+      "output_sha256": "5dd43b7ba2e249315c492ab2241e92dfa5a381acbebc47a3f5d58827f066269c"
+    }
+  ],
+  "warmup_runs": [
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6723581890000787,
+      "cpu_seconds": 0.67207,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9"
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.609139726999274,
+      "cpu_seconds": 0.608842,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9"
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.024965914999484,
+      "cpu_seconds": 1.0246349999999984,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5"
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.0036998690011387,
+      "cpu_seconds": 1.0033230000000013,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5"
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0301304329987033,
+      "cpu_seconds": 1.029899999999997,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a"
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9868635139973776,
+      "cpu_seconds": 0.9866100000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a"
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9182978030003142,
+      "cpu_seconds": 0.9181510000000027,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2"
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.9153632060006203,
+      "cpu_seconds": 0.9150740000000003,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2"
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 0.9154145689972211,
+      "cpu_seconds": 0.9152439999999975,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85"
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9182958550009062,
+      "cpu_seconds": 0.9180830000000062,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85"
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.0956205449983827,
+      "cpu_seconds": 1.0936519999999872,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90"
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.0963509119974333,
+      "cpu_seconds": 1.0944360000000124,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90"
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1070534319987928,
+      "cpu_seconds": 1.1055910000000018,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a"
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.1039602540004125,
+      "cpu_seconds": 1.1025419999999906,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a"
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.2925274189983611,
+      "cpu_seconds": 0.292034000000004,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45"
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.29440788200008683,
+      "cpu_seconds": 0.2938819999999994,
+      "command": [
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45"
+    }
+  ],
+  "perf_runs": [
+    {
+      "case": "case5-max",
+      "variant": "v1",
+      "iterations": 138000000,
+      "wall_seconds": 0.6360966479987837,
+      "cpu_seconds": 0.6165670000000001,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case5-max-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "counters": {
+        "cycles:u": 1986260501.0,
+        "instructions:u": 15458958130.0,
+        "branches:u": 2622610608.0,
+        "branch-misses:u": 19129.0
+      }
+    },
+    {
+      "case": "case5-max",
+      "variant": "v2",
+      "iterations": 138000000,
+      "wall_seconds": 0.6126087929987989,
+      "cpu_seconds": 0.6121059999999996,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case5-max-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+        "138000000"
+      ],
+      "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+      "counters": {
+        "cycles:u": 1976517707.0,
+        "instructions:u": 15320945807.0,
+        "branches:u": 2484608414.0,
+        "branch-misses:u": 19220.0
+      }
+    },
+    {
+      "case": "case3-small",
+      "variant": "v1",
+      "iterations": 99000000,
+      "wall_seconds": 1.0583103399985703,
+      "cpu_seconds": 1.039117000000003,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-small-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "counters": {
+        "cycles:u": 3372136894.0,
+        "instructions:u": 25247970698.0,
+        "branches:u": 3465613262.0,
+        "branch-misses:u": 21518.0
+      }
+    },
+    {
+      "case": "case3-small",
+      "variant": "v2",
+      "iterations": 99000000,
+      "wall_seconds": 1.011793506997492,
+      "cpu_seconds": 1.0113229999999982,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-small-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+        "99000000"
+      ],
+      "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+      "counters": {
+        "cycles:u": 3282285616.0,
+        "instructions:u": 25099438714.0,
+        "branches:u": 3366608125.0,
+        "branch-misses:u": 21187.0
+      }
+    },
+    {
+      "case": "case4-small",
+      "variant": "v1",
+      "iterations": 98000000,
+      "wall_seconds": 1.0534158820009907,
+      "cpu_seconds": 1.0292249999999903,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case4-small-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "counters": {
+        "cycles:u": 3340069799.0,
+        "instructions:u": 24502967628.0,
+        "branches:u": 3430612745.0,
+        "branch-misses:u": 22176.0
+      }
+    },
+    {
+      "case": "case4-small",
+      "variant": "v2",
+      "iterations": 98000000,
+      "wall_seconds": 0.9925312659979681,
+      "cpu_seconds": 0.992103000000004,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case4-small-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+        "98000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "counters": {
+        "cycles:u": 3225147497.0,
+        "instructions:u": 24355935639.0,
+        "branches:u": 3332607654.0,
+        "branch-misses:u": 20952.0
+      }
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v1",
+      "iterations": 152000000,
+      "wall_seconds": 0.9456130639991898,
+      "cpu_seconds": 0.9279659999999901,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-boundary8-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "counters": {
+        "cycles:u": 3008799442.0,
+        "instructions:u": 24019053395.0,
+        "branches:u": 3420626180.0,
+        "branch-misses:u": 20380.0
+      }
+    },
+    {
+      "case": "case3-boundary8",
+      "variant": "v2",
+      "iterations": 152000000,
+      "wall_seconds": 0.925991033000173,
+      "cpu_seconds": 0.9255280000000092,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-boundary8-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+        "152000000"
+      ],
+      "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+      "counters": {
+        "cycles:u": 3001249596.0,
+        "instructions:u": 24019051187.0,
+        "branches:u": 3420625482.0,
+        "branch-misses:u": 20440.0
+      }
+    },
+    {
+      "case": "case3-large",
+      "variant": "v1",
+      "iterations": 156000000,
+      "wall_seconds": 1.1668130600010045,
+      "cpu_seconds": 1.1460940000000046,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-large-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "counters": {
+        "cycles:u": 3723821692.0,
+        "instructions:u": 23481051435.0,
+        "branches:u": 3354625723.0,
+        "branch-misses:u": 19895.0
+      }
+    },
+    {
+      "case": "case3-large",
+      "variant": "v2",
+      "iterations": 156000000,
+      "wall_seconds": 0.9265735450026114,
+      "cpu_seconds": 0.9246529999999954,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-large-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+        "156000000"
+      ],
+      "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+      "counters": {
+        "cycles:u": 2998165768.0,
+        "instructions:u": 23481049007.0,
+        "branches:u": 3354624804.0,
+        "branch-misses:u": 20420.0
+      }
+    },
+    {
+      "case": "case1-register",
+      "variant": "v1",
+      "iterations": 49000000,
+      "wall_seconds": 1.1186759870033711,
+      "cpu_seconds": 1.1023550000000015,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case1-register-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "counters": {
+        "cycles:u": 3583890260.0,
+        "instructions:u": 23498464703.0,
+        "branches:u": 3087612424.0,
+        "branch-misses:u": 21405.0
+      }
+    },
+    {
+      "case": "case1-register",
+      "variant": "v2",
+      "iterations": 49000000,
+      "wall_seconds": 1.104846741000074,
+      "cpu_seconds": 1.1031339999999856,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case1-register-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+        "49000000"
+      ],
+      "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+      "counters": {
+        "cycles:u": 3589392745.0,
+        "instructions:u": 23498445073.0,
+        "branches:u": 3087609539.0,
+        "branch-misses:u": 21405.0
+      }
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v1",
+      "iterations": 45000000,
+      "wall_seconds": 1.1315720849997888,
+      "cpu_seconds": 1.110832000000035,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case2-x0-x0-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "counters": {
+        "cycles:u": 3610624656.0,
+        "instructions:u": 23987958632.0,
+        "branches:u": 3240611455.0,
+        "branch-misses:u": 21606.0
+      }
+    },
+    {
+      "case": "case2-x0-x0",
+      "variant": "v2",
+      "iterations": 45000000,
+      "wall_seconds": 1.14949378700112,
+      "cpu_seconds": 1.1480879999999816,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case2-x0-x0-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+        "45000000"
+      ],
+      "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+      "counters": {
+        "cycles:u": 3731054361.0,
+        "instructions:u": 23987936770.0,
+        "branches:u": 3240607898.0,
+        "branch-misses:u": 21044.0
+      }
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v1",
+      "iterations": 500000000,
+      "wall_seconds": 0.3244001059974835,
+      "cpu_seconds": 0.30342900000001205,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-scalar-control-v1.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "counters": {
+        "cycles:u": 959781250.0,
+        "instructions:u": 7502754844.0,
+        "branches:u": 1500577710.0,
+        "branch-misses:u": 17592.0
+      }
+    },
+    {
+      "case": "scalar-control",
+      "variant": "v2",
+      "iterations": 500000000,
+      "wall_seconds": 0.3017175140012114,
+      "cpu_seconds": 0.30092700000001416,
+      "command": [
+        "perf",
+        "stat",
+        "-x,",
+        "--no-big-num",
+        "-o",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-scalar-control-v2.stat",
+        "-e",
+        "cycles:u,instructions:u,branches:u,branch-misses:u",
+        "--",
+        "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+        "-cpu",
+        "rv64,v=true,vlen=128,elen=64",
+        "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+        "500000000"
+      ],
+      "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+      "counters": {
+        "cycles:u": 955420392.0,
+        "instructions:u": 7502752594.0,
+        "branches:u": 1500576998.0,
+        "branch-misses:u": 17538.0
+      }
+    }
+  ],
+  "v1": {
+    "commit": "77a8f2db05602891f59e623995639326bba51f60",
+    "ref": "HEAD",
+    "sha256": "2df493d116b8375de0ac51de058638c853197944166d8e80db72a8bd08d57c22",
+    "source": "<workspace>/qemu",
+    "target": "riscv64-linux-user"
+  },
+  "v2": {
+    "commit": "d6cb1c3fb712338bf769ac8cd26b471358db2d15",
+    "ref": "HEAD",
+    "sha256": "a4260683466098e302fd66bf29488bff830da54b765d469fa43af2be6411f0fd",
+    "source": "<workspace>/qemu",
+    "target": "riscv64-linux-user"
+  },
+  "summary": [
+    {
+      "case": "case5-max",
+      "medians": {
+        "v1": 0.6055642779974733,
+        "v2": 0.6069858140035649
+      },
+      "wall_reduction_percent": -0.23474568394168394,
+      "paired_reduction_percent": [
+        -0.2366397981609314,
+        -0.38336284768081264,
+        5.382004161450338,
+        0.3432199303362693,
+        -0.005426704230293566,
+        -1.1365079240799103,
+        -0.3715125006206854,
+        0.06886133380630266,
+        -0.3547756955901038
+      ],
+      "v2_faster_pairs": 3,
+      "ranges": {
+        "v1": [
+          0.6043882480007596,
+          0.6434034230005636
+        ],
+        "v2": [
+          0.6055384860010236,
+          0.6124465640023118
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "case5-max",
+          "variant": "v1",
+          "iterations": 138000000,
+          "wall_seconds": 0.6360966479987837,
+          "cpu_seconds": 0.6165670000000001,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case5-max-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+            "138000000"
+          ],
+          "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+          "counters": {
+            "cycles:u": 1986260501.0,
+            "instructions:u": 15458958130.0,
+            "branches:u": 2622610608.0,
+            "branch-misses:u": 19129.0
+          }
+        },
+        "v2": {
+          "case": "case5-max",
+          "variant": "v2",
+          "iterations": 138000000,
+          "wall_seconds": 0.6126087929987989,
+          "cpu_seconds": 0.6121059999999996,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case5-max-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case5-max.elf",
+            "138000000"
+          ],
+          "output_sha256": "c18ddbefdad28b013e828d986a9e1486075ae06f809535cb50ca2c7c83feb7f9",
+          "counters": {
+            "cycles:u": 1976517707.0,
+            "instructions:u": 15320945807.0,
+            "branches:u": 2484608414.0,
+            "branch-misses:u": 19220.0
+          }
+        }
+      }
+    },
+    {
+      "case": "case3-small",
+      "medians": {
+        "v1": 1.0308116199994402,
+        "v2": 1.0035321610012033
+      },
+      "wall_reduction_percent": 2.6464058484567343,
+      "paired_reduction_percent": [
+        2.6701058684678203,
+        2.604828642388801,
+        3.83101203220918,
+        0.3311267314850985,
+        2.4292734852304654,
+        2.548409572771848,
+        2.3253593330264444,
+        2.734601923267288,
+        2.629766996091576
+      ],
+      "v2_faster_pairs": 9,
+      "ranges": {
+        "v1": [
+          1.026959345999785,
+          1.0442443580031977
+        ],
+        "v2": [
+          1.0030788510011917,
+          1.0275365399975271
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "case3-small",
+          "variant": "v1",
+          "iterations": 99000000,
+          "wall_seconds": 1.0583103399985703,
+          "cpu_seconds": 1.039117000000003,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-small-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+            "99000000"
+          ],
+          "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+          "counters": {
+            "cycles:u": 3372136894.0,
+            "instructions:u": 25247970698.0,
+            "branches:u": 3465613262.0,
+            "branch-misses:u": 21518.0
+          }
+        },
+        "v2": {
+          "case": "case3-small",
+          "variant": "v2",
+          "iterations": 99000000,
+          "wall_seconds": 1.011793506997492,
+          "cpu_seconds": 1.0113229999999982,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-small-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-small.elf",
+            "99000000"
+          ],
+          "output_sha256": "11be2d846de01180384220dc38c572490e73f6b6c097e61a27e2e3bd5024d9f5",
+          "counters": {
+            "cycles:u": 3282285616.0,
+            "instructions:u": 25099438714.0,
+            "branches:u": 3366608125.0,
+            "branch-misses:u": 21187.0
+          }
+        }
+      }
+    },
+    {
+      "case": "case4-small",
+      "medians": {
+        "v1": 1.019240143999923,
+        "v2": 0.9866725329993642
+      },
+      "wall_reduction_percent": 3.1952833875586895,
+      "paired_reduction_percent": [
+        3.160901205715927,
+        3.4892962584621823,
+        3.2611991898669035,
+        1.3939789613526155,
+        3.439252895241507,
+        3.2424854035775663,
+        2.931519228062973,
+        2.449267210266448,
+        1.9846250369551788
+      ],
+      "v2_faster_pairs": 9,
+      "ranges": {
+        "v1": [
+          1.003077908000705,
+          1.0217200650004088
+        ],
+        "v2": [
+          0.9860231640013808,
+          0.9890952129971993
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "case4-small",
+          "variant": "v1",
+          "iterations": 98000000,
+          "wall_seconds": 1.0534158820009907,
+          "cpu_seconds": 1.0292249999999903,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case4-small-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+            "98000000"
+          ],
+          "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+          "counters": {
+            "cycles:u": 3340069799.0,
+            "instructions:u": 24502967628.0,
+            "branches:u": 3430612745.0,
+            "branch-misses:u": 22176.0
+          }
+        },
+        "v2": {
+          "case": "case4-small",
+          "variant": "v2",
+          "iterations": 98000000,
+          "wall_seconds": 0.9925312659979681,
+          "cpu_seconds": 0.992103000000004,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case4-small-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case4-small.elf",
+            "98000000"
+          ],
+          "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+          "counters": {
+            "cycles:u": 3225147497.0,
+            "instructions:u": 24355935639.0,
+            "branches:u": 3332607654.0,
+            "branch-misses:u": 20952.0
+          }
+        }
+      }
+    },
+    {
+      "case": "case3-boundary8",
+      "medians": {
+        "v1": 0.91728839300049,
+        "v2": 0.9161735899979249
+      },
+      "wall_reduction_percent": 0.12153244400254781,
+      "paired_reduction_percent": [
+        -0.3836271805322422,
+        0.2504129851923276,
+        0.18307340896479563,
+        0.11329555314150141,
+        0.12153244400254781,
+        -0.08293505466996365,
+        0.20883288604107708,
+        0.06647270926530835,
+        0.42191529959727525
+      ],
+      "v2_faster_pairs": 7,
+      "ranges": {
+        "v1": [
+          0.9160532979985874,
+          0.9190434669981187
+        ],
+        "v2": [
+          0.9143762479980069,
+          0.9199086299995543
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "case3-boundary8",
+          "variant": "v1",
+          "iterations": 152000000,
+          "wall_seconds": 0.9456130639991898,
+          "cpu_seconds": 0.9279659999999901,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-boundary8-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+            "152000000"
+          ],
+          "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+          "counters": {
+            "cycles:u": 3008799442.0,
+            "instructions:u": 24019053395.0,
+            "branches:u": 3420626180.0,
+            "branch-misses:u": 20380.0
+          }
+        },
+        "v2": {
+          "case": "case3-boundary8",
+          "variant": "v2",
+          "iterations": 152000000,
+          "wall_seconds": 0.925991033000173,
+          "cpu_seconds": 0.9255280000000092,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-boundary8-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-boundary8.elf",
+            "152000000"
+          ],
+          "output_sha256": "16621d5f6287bdabcbedf5c8374c904e9ba8232367f35f6fe910edce36736ad2",
+          "counters": {
+            "cycles:u": 3001249596.0,
+            "instructions:u": 24019051187.0,
+            "branches:u": 3420625482.0,
+            "branch-misses:u": 20440.0
+          }
+        }
+      }
+    },
+    {
+      "case": "case3-large",
+      "medians": {
+        "v1": 0.918635923997499,
+        "v2": 0.9180101159981859
+      },
+      "wall_reduction_percent": 0.06812361491262964,
+      "paired_reduction_percent": [
+        0.1834561621405939,
+        0.1642654560812029,
+        -0.23624374064394882,
+        0.1695226974973485,
+        -0.2625970471436645,
+        0.04629499104779056,
+        -0.16728645257282349,
+        -0.3525851663580326,
+        0.4587789132560083
+      ],
+      "v2_faster_pairs": 5,
+      "ranges": {
+        "v1": [
+          0.9158464860011009,
+          0.9228839600000356
+        ],
+        "v2": [
+          0.9168124079988047,
+          0.9218748979983502
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "case3-large",
+          "variant": "v1",
+          "iterations": 156000000,
+          "wall_seconds": 1.1668130600010045,
+          "cpu_seconds": 1.1460940000000046,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-large-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+            "156000000"
+          ],
+          "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+          "counters": {
+            "cycles:u": 3723821692.0,
+            "instructions:u": 23481051435.0,
+            "branches:u": 3354625723.0,
+            "branch-misses:u": 19895.0
+          }
+        },
+        "v2": {
+          "case": "case3-large",
+          "variant": "v2",
+          "iterations": 156000000,
+          "wall_seconds": 0.9265735450026114,
+          "cpu_seconds": 0.9246529999999954,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case3-large-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case3-large.elf",
+            "156000000"
+          ],
+          "output_sha256": "7ad44534ffe69d28cf774d984b9332b7ac79ac9b2198314b2945a248d8424d85",
+          "counters": {
+            "cycles:u": 2998165768.0,
+            "instructions:u": 23481049007.0,
+            "branches:u": 3354624804.0,
+            "branch-misses:u": 20420.0
+          }
+        }
+      }
+    },
+    {
+      "case": "case1-register",
+      "medians": {
+        "v1": 1.0959112649979943,
+        "v2": 1.09595345499838
+      },
+      "wall_reduction_percent": -0.003849764276830925,
+      "paired_reduction_percent": [
+        -0.09253021879476186,
+        0.13000315178790522,
+        -0.21541742952990717,
+        0.44710939520207216,
+        -0.10520691129596305,
+        -0.21814048082922088,
+        11.029489086916422,
+        -0.05117809781007843,
+        -0.023385834978739695
+      ],
+      "v2_faster_pairs": 3,
+      "ranges": {
+        "v1": [
+          1.0948016479997023,
+          1.2311916619983094
+        ],
+        "v2": [
+          1.0947744500008412,
+          1.0975691659987206
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "case1-register",
+          "variant": "v1",
+          "iterations": 49000000,
+          "wall_seconds": 1.1186759870033711,
+          "cpu_seconds": 1.1023550000000015,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case1-register-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+            "49000000"
+          ],
+          "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+          "counters": {
+            "cycles:u": 3583890260.0,
+            "instructions:u": 23498464703.0,
+            "branches:u": 3087612424.0,
+            "branch-misses:u": 21405.0
+          }
+        },
+        "v2": {
+          "case": "case1-register",
+          "variant": "v2",
+          "iterations": 49000000,
+          "wall_seconds": 1.104846741000074,
+          "cpu_seconds": 1.1031339999999856,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case1-register-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case1-register.elf",
+            "49000000"
+          ],
+          "output_sha256": "c444376ee3c5af574c9ae1ecd10725f69db42d95119169cb0efebc8a2b2b5f90",
+          "counters": {
+            "cycles:u": 3589392745.0,
+            "instructions:u": 23498445073.0,
+            "branches:u": 3087609539.0,
+            "branch-misses:u": 21405.0
+          }
+        }
+      }
+    },
+    {
+      "case": "case2-x0-x0",
+      "medians": {
+        "v1": 1.1073421590008365,
+        "v2": 1.106529232001776
+      },
+      "wall_reduction_percent": 0.07341244911996947,
+      "paired_reduction_percent": [
+        -4.790275086558138,
+        0.11223188732462086,
+        -0.011872200035734082,
+        -0.2582695758824638,
+        9.978400287358202,
+        0.769892745282641,
+        1.1277628949632579,
+        0.014493256668057786,
+        0.0720102892572072
+      ],
+      "v2_faster_pairs": 6,
+      "ranges": {
+        "v1": [
+          1.1031104139983654,
+          1.230312199000764
+        ],
+        "v2": [
+          1.1023160609984188,
+          1.1585810710021178
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "case2-x0-x0",
+          "variant": "v1",
+          "iterations": 45000000,
+          "wall_seconds": 1.1315720849997888,
+          "cpu_seconds": 1.110832000000035,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case2-x0-x0-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+            "45000000"
+          ],
+          "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+          "counters": {
+            "cycles:u": 3610624656.0,
+            "instructions:u": 23987958632.0,
+            "branches:u": 3240611455.0,
+            "branch-misses:u": 21606.0
+          }
+        },
+        "v2": {
+          "case": "case2-x0-x0",
+          "variant": "v2",
+          "iterations": 45000000,
+          "wall_seconds": 1.14949378700112,
+          "cpu_seconds": 1.1480879999999816,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-case2-x0-x0-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/case2-x0-x0.elf",
+            "45000000"
+          ],
+          "output_sha256": "4a746923fedc3c917270a8020691aec2af4ef809ac20531c13e31cc19b14417a",
+          "counters": {
+            "cycles:u": 3731054361.0,
+            "instructions:u": 23987936770.0,
+            "branches:u": 3240607898.0,
+            "branch-misses:u": 21044.0
+          }
+        }
+      }
+    },
+    {
+      "case": "scalar-control",
+      "medians": {
+        "v1": 0.29415087400047923,
+        "v2": 0.2945797610009322
+      },
+      "wall_reduction_percent": -0.14580510831738724,
+      "paired_reduction_percent": [
+        0.16903345219450028,
+        0.4838255321299778,
+        -0.17579577582751416,
+        0.43094913172203597,
+        0.22918432979157632,
+        -0.14310780450195182,
+        -0.28609624951274615,
+        -0.1971290813882698,
+        -0.15559532234554752
+      ],
+      "v2_faster_pairs": 4,
+      "ranges": {
+        "v1": [
+          0.2935882589990797,
+          0.29607833200134337
+        ],
+        "v2": [
+          0.29338471699884394,
+          0.29554391500278143
+        ]
+      },
+      "perf": {
+        "v1": {
+          "case": "scalar-control",
+          "variant": "v1",
+          "iterations": 500000000,
+          "wall_seconds": 0.3244001059974835,
+          "cpu_seconds": 0.30342900000001205,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-scalar-control-v1.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v1/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+            "500000000"
+          ],
+          "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+          "counters": {
+            "cycles:u": 959781250.0,
+            "instructions:u": 7502754844.0,
+            "branches:u": 1500577710.0,
+            "branch-misses:u": 17592.0
+          }
+        },
+        "v2": {
+          "case": "scalar-control",
+          "variant": "v2",
+          "iterations": 500000000,
+          "wall_seconds": 0.3017175140012114,
+          "cpu_seconds": 0.30092700000001416,
+          "command": [
+            "perf",
+            "stat",
+            "-x,",
+            "--no-big-num",
+            "-o",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/timing/micro/perf-scalar-control-v2.stat",
+            "-e",
+            "cycles:u,instructions:u,branches:u,branch-misses:u",
+            "--",
+            "<workspace>/qemu/experiment-binaries/vsetvli-review-v2-20261106/v2/qemu-riscv64",
+            "-cpu",
+            "rv64,v=true,vlen=128,elen=64",
+            "<workspace>/research/qemu-optimization-routes/vset-tb-continuation/vsetvli-review-v2-20261106/inputs/scalar-control.elf",
+            "500000000"
+          ],
+          "output_sha256": "aa265d477ddad8fe91374309f9d39a63f679da15a7b41f62b667184bc8ee1d45",
+          "counters": {
+            "cycles:u": 955420392.0,
+            "instructions:u": 7502752594.0,
+            "branches:u": 1500576998.0,
+            "branch-misses:u": 17538.0
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+schema: 1
+id: zlib-ng
+kind: package-build
+source:
+  version: 2.2.3
+  url: https://codeload.github.com/zlib-ng/zlib-ng/tar.gz/refs/tags/2.2.3
+  sha256: f2fb245c35082fe9ea7a22b332730f63cf1d42f04d84fe48294207d033cba4dd
+recipe: zlib-ng
+artifacts:
+- build/libz-ng.a
+validation: zlib-ng-roundtrip

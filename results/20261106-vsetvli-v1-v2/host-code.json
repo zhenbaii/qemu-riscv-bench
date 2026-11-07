@@ -1,0 +1,319 @@
+[
+  {
+    "case": "case5-max",
+    "variant": "v1",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 111,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x10,ne,$L1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case5-max",
+    "variant": "v2",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 75,
+        "goto_slots": [
+          "0"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case3-small",
+    "variant": "v1",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 123,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x4,ne,$L1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case3-small",
+    "variant": "v2",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 83,
+        "goto_slots": [
+          "0"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case4-small",
+    "variant": "v1",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 119,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 loc5,$0x4,ne,$L1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case4-small",
+    "variant": "v2",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 79,
+        "goto_slots": [
+          "0"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case3-boundary8",
+    "variant": "v1",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 123,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x8,ne,$L1"
+        ]
+      },
+      {
+        "host_code_bytes": 123,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x8,ne,$L1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case3-boundary8",
+    "variant": "v2",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 123,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x8,ne,$L1"
+        ]
+      },
+      {
+        "host_code_bytes": 123,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x8,ne,$L1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case3-large",
+    "variant": "v1",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 119,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x10,ne,$L1"
+        ]
+      },
+      {
+        "host_code_bytes": 119,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x10,ne,$L1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case3-large",
+    "variant": "v2",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 119,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x10,ne,$L1"
+        ]
+      },
+      {
+        "host_code_bytes": 119,
+        "goto_slots": [
+          "0",
+          "1"
+        ],
+        "goto_lines": [
+          "goto_tb $0x0",
+          "goto_tb $0x1"
+        ],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0",
+          "brcond_i64 x6/t1,$0x10,ne,$L1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case1-register",
+    "variant": "v1",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 77,
+        "goto_slots": [],
+        "goto_lines": [],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case1-register",
+    "variant": "v2",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 77,
+        "goto_slots": [],
+        "goto_lines": [],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case2-x0-x0",
+    "variant": "v1",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 71,
+        "goto_slots": [],
+        "goto_lines": [],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "case2-x0-x0",
+    "variant": "v2",
+    "source_tb_versions": [
+      {
+        "host_code_bytes": 71,
+        "goto_slots": [],
+        "goto_lines": [],
+        "brcond_lines": [
+          "brcond_i32 loc1,$0x0,lt,$L0"
+        ]
+      }
+    ]
+  }
+]

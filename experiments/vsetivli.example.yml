@@ -1,0 +1,26 @@
+# Copy this file to *.local.yml. Paths resolve relative to this file.
+# Set QEMU paths here or pass --qemu LABEL=PATH. null affinity inherits the current mask.
+schema: 1
+name: vsetivli-example
+runner: vsetivli
+workloads:
+- vsetivli
+reference: baseline
+qemu:
+  baseline:
+    path: null
+    commit: null
+  candidate:
+    path: null
+    commit: null
+host:
+  affinity: null
+build:
+  cross_cc: riscv64-linux-gnu-gcc
+measurement:
+  warmups: 1
+  repetitions: 10
+  timeout: 1800
+  min_seconds: 1.0
+storage:
+  data_dir: ../data

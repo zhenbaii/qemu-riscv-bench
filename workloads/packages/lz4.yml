@@ -1,0 +1,12 @@
+schema: 1
+id: lz4
+kind: package-build
+source:
+  version: 1.10.0
+  url: https://codeload.github.com/lz4/lz4/tar.gz/refs/tags/v1.10.0
+  sha256: 537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b
+recipe: lz4
+artifacts:
+- lib/liblz4.a
+- programs/lz4
+validation: lz4-roundtrip

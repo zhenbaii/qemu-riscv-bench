@@ -1,0 +1,11 @@
+schema: 1
+id: vsetivli
+kind: micro
+runner: vsetivli
+cpu: rv64,v=true,vlen=128,elen=64
+source:
+  path: microbench.S
+  sha256: 557db129fc6624c6f04cb7f734cc89bc9891bcab6e7dc905dfe8780ddca5c1c1
+cases:
+- vsetivli-chain
+- scalar-control
