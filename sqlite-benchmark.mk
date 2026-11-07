@@ -1,5 +1,5 @@
 # Compile the upstream amalgamation and CLI without a configure phase.
-.PHONY: all
+.PHONY: all clean
 all: libsqlite3.a sqlite3
 
 sqlite3.o: sqlite3.c sqlite3.h
@@ -14,3 +14,6 @@ libsqlite3.a: sqlite3.o
 
 sqlite3: shell.o libsqlite3.a
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ shell.o libsqlite3.a -ldl -lpthread -lm
+
+clean:
+	$(RM) sqlite3.o shell.o libsqlite3.a sqlite3

@@ -157,6 +157,49 @@ class BenchmarkTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'overlap'):
                 run.copy_source(work, work, True)
 
+    def test_local_zlib_placeholder_is_configured_before_cleaning(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source, work = root / 'source', root / 'work'
+            source.mkdir()
+            placeholder = 'all:\n\t@echo "Please use ./configure first."\n'
+            (source / 'Makefile').write_text(placeholder)
+            (source / 'stale.o').write_bytes(b'previous compiler output')
+            run.copy_source(source, work, False)
+            args = argparse.Namespace(source_dir=source, jobs=1, timeout=1)
+            commands = []
+
+            def invoke(command, cwd, env, log, timeout):
+                commands.append(command)
+                if command == ['./configure', '--static']:
+                    (cwd / 'Makefile').write_text('all:\nclean:\n\trm -f stale.o\n')
+                elif command == ['make', 'clean']:
+                    self.assertIn('clean:', (cwd / 'Makefile').read_text())
+                    (cwd / 'stale.o').unlink()
+                else:
+                    self.fail(f'Unexpected preparation command: {command}')
+
+            with patch('run.invoke', side_effect=invoke):
+                build = run.prepare_build('zlib', args, root / 'cc', {}, work, {}, root / 'log')
+            self.assertEqual(commands, [['./configure', '--static'], ['make', 'clean']])
+            self.assertEqual(build, ['make', '-j1'])
+            self.assertFalse((work / 'stale.o').exists())
+            self.assertEqual((source / 'Makefile').read_text(), placeholder)
+            self.assertTrue((source / 'stale.o').exists())
+
+    def test_local_sqlite_clean_uses_the_benchmark_makefile(self):
+        args = argparse.Namespace(source_dir=Path('/local/source'), jobs=1, timeout=1)
+        with patch('run.invoke') as invoke:
+            run.prepare_build('sqlite', args, Path('/cc'), {}, Path('/work'), {}, Path('/log'))
+        self.assertEqual(invoke.call_args.args[0],
+                         ['make', '-f', str(run.HERE / 'sqlite-benchmark.mk'), 'clean'])
+
+    def test_fresh_upstream_zlib_configures_without_local_tree_cleanup(self):
+        args = argparse.Namespace(source_dir=None, jobs=1, timeout=1)
+        with patch('run.invoke') as invoke:
+            run.prepare_build('zlib', args, Path('/cc'), {}, Path('/work'), {}, Path('/log'))
+        self.assertEqual([entry.args[0] for entry in invoke.call_args_list], [['./configure', '--static']])
+
     def test_warmups_and_coverage_do_not_enter_statistics(self):
         with tempfile.TemporaryDirectory() as tmp:
             def row(label, seconds, warmup=False, coverage=False):

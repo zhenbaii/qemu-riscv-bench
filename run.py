@@ -291,6 +291,23 @@ def copy_source(source: Path, work: Path, cmake_build: bool) -> None:
             shutil.rmtree(old_build)
 
 
+def prepare_build(package, args, cc, tools, work, env, log):
+    configure, build = build_commands(package, args, cc, tools)
+    for command in configure:
+        invoke(command, work, env, log, args.timeout)
+    if args.source_dir:
+        recipe = REGISTRY[package]['recipe']
+        # zlib's release Makefile is a placeholder without a clean target.
+        # Configure first, then clean the copy with its actual build recipe.
+        if recipe in ('zlib', 'lz4'):
+            invoke(['make', 'clean'], work, env, log, args.timeout)
+        elif recipe == 'sqlite':
+            invoke(['make', '-f', str(HERE / 'sqlite-benchmark.mk'), 'clean'],
+                   work, env, log, args.timeout)
+        # CMake builds use a newly created build/ directory in copy_source().
+    return build
+
+
 def build_once(package: str, source: Path, variant: dict, tc: dict, cross: dict,
                args, session: Path, iteration: int, warmup: bool, plugin: Path | None = None) -> dict:
     label = variant['label']
@@ -317,13 +334,8 @@ def build_once(package: str, source: Path, variant: dict, tc: dict, cross: dict,
     env.update(cross['tools'])
     env.update({'CC': shlex.quote(str(cc)), 'CPP': shlex.quote(str(cc)) + ' -E', 'CFLAGS': flags})
     log = out / 'build.log'
-    # Clear generated artifacts from a caller-supplied local tree before configuring.
-    if args.source_dir and (work / 'Makefile').exists():
-        invoke(['make', 'clean'], work, env, log, args.timeout)
-    configure, build = build_commands(package, args, cc, cross['tools'])
     print(f'{name}: preparing fresh build; log: {log}', flush=True)
-    for command in configure:
-        invoke(command, work, env, log, args.timeout)
+    build = prepare_build(package, args, cc, cross['tools'], work, env, log)
     configured = load_events(events)
     if plugin:
         config['plugin'] = str(plugin)
