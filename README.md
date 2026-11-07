@@ -112,7 +112,7 @@ skips calibration. Select cases with repeated `--case NAME` arguments.
 
 Results appear in a new `data/vsetvli/<UTC timestamp>/` directory:
 
-- `summary.md`: medians, ranges, elapsed-time ratios relative to the baseline, and paired wins.
+- `summary.md` reports medians, ranges, elapsed-time changes and ratios relative to the baseline, and paired wins.
 - `samples.csv`: every calibration, warmup, and measured sample, with its phase.
 - `results.json`: arguments, QEMU hashes/commits, raw samples, checks, and host settings.
 - `inputs/`: assembly snapshots, rebuilt ELF files, disassemblies, symbols, and build commands.

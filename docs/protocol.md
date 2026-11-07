@@ -20,7 +20,8 @@
    perfectly balanced; choose an even count when exact order balance matters.
 6. Report sample count, median, range, paired elapsed-time ratios, and the
    scalar control. `Wall / baseline` divides each variant's median elapsed time
-   by the baseline median. Ratios below one indicate shorter times. Use observed
+   by the baseline median. `Wall change` is `(ratio - 1) × 100%`. A negative
+   percentage or a ratio below one indicates shorter elapsed time. Use observed
    variation to judge small differences and application workloads to measure
    application performance.
 7. Keep host-GDB, instruction tracing, and coverage runs out of performance

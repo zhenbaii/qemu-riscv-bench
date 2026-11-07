@@ -142,12 +142,13 @@ def summarize(rows, names, labels):
                 continue
             values = [r['wall_seconds'] for r in selected]
             median = statistics.median(values)
+            ratio = median / base
             pairs = [r['wall_seconds'] / reference[r['pair']]
                      for r in selected if r['pair'] in reference]
             summaries.append(dict(case=name, variant=label, runs=len(values), median_seconds=median,
                                   min_seconds=min(values), max_seconds=max(values),
                                   stddev_seconds=statistics.stdev(values) if len(values) > 1 else None,
-                                  wall_ratio=median / base,
+                                  wall_change_percent=100 * (ratio - 1), wall_ratio=ratio,
                                   paired_wall_ratios=pairs,
                                   faster_pairs=sum(value < 1 for value in pairs)))
     return summaries
@@ -164,12 +165,12 @@ def report(result, output):
         writer.writerows(result['runs'])
     lines = ['# vsetvli benchmark', '', 'Status: ' + result['status'], '',
              'Wall time includes process startup. Diagnostic/perf runs are excluded.', '',
-             '| Case | QEMU | Runs | Median (s) | Min–max (s) | Wall / baseline | Faster pairs |',
-             '| --- | --- | ---: | ---: | ---: | ---: | ---: |']
+             '| Case | QEMU | Runs | Median (s) | Min–max (s) | Wall change | Wall / baseline | Faster pairs |',
+             '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
     for row in result['summary']:
         lines.append(f"| {row['case']} | {row['variant']} | {row['runs']} | {row['median_seconds']:.6f} | "
                      f"{row['min_seconds']:.6f}–{row['max_seconds']:.6f} | "
-                     f"{row['wall_ratio']:.3f}x | "
+                     f"{row['wall_change_percent']:.2f}% | {row['wall_ratio']:.3f}x | "
                      f"{row['faster_pairs']}/{len(row['paired_wall_ratios'])} |")
     lines += ['', 'Wall / baseline is the ratio of median elapsed times. Lower is faster.', '']
     if result['diagnostics']:

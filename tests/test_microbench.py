@@ -50,6 +50,7 @@ class MicrobenchTests(unittest.TestCase):
         self.assertEqual(result[0]['runs'], 2)
         self.assertEqual(result[0]['median_seconds'], 3)
         self.assertEqual(result[1]['wall_ratio'], 0.5)
+        self.assertEqual(result[1]['wall_change_percent'], -50)
 
 
 if __name__ == '__main__':

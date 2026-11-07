@@ -42,6 +42,7 @@ class VsetvliTests(unittest.TestCase):
         self.assertEqual(result[1]['runs'], 2)
         self.assertEqual(result[1]['faster_pairs'], 2)
         self.assertEqual(result[1]['wall_ratio'], 0.8)
+        self.assertAlmostEqual(result[1]['wall_change_percent'], -20)
         self.assertEqual(result[1]['paired_wall_ratios'], [0.8, 0.8])
 
     def test_qemu_has_no_workspace_default(self):

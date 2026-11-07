@@ -102,10 +102,11 @@ def summarize(rows, qemus):
             median = statistics.median(values)
             if reference is None:
                 reference = median
+            ratio = median / reference
             result.append({'case': case, 'variant': variant['label'], 'runs': len(values),
                 'median_seconds': median, 'min_seconds': min(values), 'max_seconds': max(values),
                 'stddev_seconds': statistics.stdev(values) if len(values) > 1 else None,
-                'wall_ratio': median / reference})
+                'wall_change_percent': 100 * (ratio - 1), 'wall_ratio': ratio})
     return result
 
 
@@ -250,15 +251,17 @@ def run_suite(qemus, output: Path, cross_cc: str, cpu: str, warmups=1, repetitio
             'Scope: libc-free guest loop, including QEMU startup; distinct from package build timings.',
             'Calibration, warmups, chain traces and optional instruction counting are excluded.',
             'The synthetic workload measures the selected guest instruction path.', '',
-            '| Case | QEMU | Runs | Median wall (s) | Min–max (s) | Wall / baseline |',
-            '| --- | --- | ---: | ---: | ---: | ---: |']
+            '| Case | QEMU | Runs | Median wall (s) | Min–max (s) | Wall change | Wall / baseline |',
+            '| --- | --- | ---: | ---: | ---: | ---: | ---: |']
         if not metadata['all_measured_samples_reach_duration_floor']:
             lines[4:4] = ['Some samples are below the requested duration floor; short fixed-count runs are functional checks, not reliable performance evidence.', '']
         for s in statistics_rows:
-            ratio = (f"{s['wall_ratio']:.3f}x" if metadata['all_measured_samples_reach_duration_floor']
-                     else 'n/a (short run)')
+            change = ratio = 'n/a (short run)'
+            if metadata['all_measured_samples_reach_duration_floor']:
+                change = f"{s['wall_change_percent']:.2f}%"
+                ratio = f"{s['wall_ratio']:.3f}x"
             lines.append(f"| {s['case']} | {s['variant']} | {s['runs']} | {s['median_seconds']:.3f} | "
-                         f"{s['min_seconds']:.3f}–{s['max_seconds']:.3f} | {ratio} |")
+                         f"{s['min_seconds']:.3f}–{s['max_seconds']:.3f} | {change} | {ratio} |")
         lines += ['', 'Untimed observed vsetivli successor chain edges:', '',
                   json.dumps(metadata['trace_diagnostics'], indent=2), '']
         (output / 'summary.md').write_text('\n'.join(lines))
