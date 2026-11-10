@@ -5,8 +5,11 @@
 ## Reproduce a patch
 
 Use Linux, Python 3.12+, the QEMU build dependencies, and a RISC-V Linux cross
-toolchain. The RVV GCC bootstrap requires a GCC 14.2.0 cross driver.
-Profiling requires Linux `perf`.
+toolchain. Profiling requires Linux `perf`.
+
+For package builds with `build.compiler: rvv`, the bench downloads GCC and
+builds and caches the guest `cc1` before the first measurement. This step uses
+a RISC-V GCC 14.2.0 cross driver, `gcc`, `g++`, `make`, and `dpkg-deb`.
 
 Put a clean QEMU checkout containing both commits at `../qemu` relative to
 this repository, or set `QEMU_SRC` to the checkout path. Run the commands from

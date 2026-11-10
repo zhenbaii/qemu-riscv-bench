@@ -5,7 +5,11 @@
 ## 复现补丁结果
 
 需要 Linux、Python 3.12+、QEMU 构建依赖和 RISC-V Linux 交叉工具链。
-构建 RVV GCC 需要 14.2.0 版的交叉编译器，采样需要宿主机的 `perf`。
+采样需要宿主机的 `perf`。
+
+通用负载使用 `build.compiler: rvv` 时，bench 会在首次计时前下载 GCC，
+构建并缓存 guest `cc1`。宿主机需要 RISC-V GCC 14.2.0 交叉编译器、
+`gcc`、`g++`、`make` 和 `dpkg-deb`。
 
 准备一份干净的 QEMU checkout，确保基线和补丁两个 commit 都在其中。
 将它放在 bench 仓库旁的 `../qemu`，也可以用 `QEMU_SRC` 指定路径。
