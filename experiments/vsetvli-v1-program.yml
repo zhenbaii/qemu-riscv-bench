@@ -10,7 +10,7 @@ qemu:
   candidate:
     path: null
 host:
-  affinity: auto
+  affinity: [7]
 build:
   cross_cc: riscv64-linux-gnu-gcc
   march: rv64gcv

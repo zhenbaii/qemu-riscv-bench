@@ -11,8 +11,7 @@ qemu:
   candidate:
     path: null
 host:
-  # The mail's host used CPU 7. Pick an allowed CPU on the reviewer's host.
-  affinity: auto
+  affinity: [7]
 build:
   cross_cc: riscv64-linux-gnu-gcc-14
   compiler: rvv

@@ -16,8 +16,9 @@
 `vsetvli-v1` recipe 先跑[专项程序和 perf 采样](experiments/vsetvli-v1-program.yml)，
 再跑[邮件中的 LZ4、zlib、SQLite 构建](experiments/vsetvli-v1-mail.yml)。
 构建负载使用原实验的 amd64 GCC 14.2.0 依赖锁，需要 `riscv64-linux-gnu-gcc-14`。
-bench 默认绑定当前允许使用的第一个逻辑 CPU，可加 `--affinity 7` 沿用邮件里的绑核设置，
-也可加 `--dry-run` 预览两组计划。自定义实验或单个负载用 `run.sh`。
+两段都按邮件设置绑定宿主 CPU 7。其他机器可用 `--affinity CPU` 指定，
+也可用 `--affinity auto` 选择当前允许使用的第一个逻辑 CPU。
+用 `--dry-run` 预览两组计划。自定义实验或单个负载用 `run.sh`。
 
 ## 目录
 

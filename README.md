@@ -21,10 +21,11 @@ configure arguments and restores the checkout after each build. The
 `vsetvli-v1` recipe first runs the [focused program with perf](experiments/vsetvli-v1-program.yml),
 then the [LZ4, zlib, and SQLite builds from the mail](experiments/vsetvli-v1-mail.yml).
 The package preset uses the original amd64 GCC 14.2.0 bootstrap lock and
-expects `riscv64-linux-gnu-gcc-14`. Both stages select the first allowed host
-logical CPU by default. Append `--affinity 7` to use CPU 7 where available, or
-`--dry-run` to preview the resolved plans. Use `run.sh` with QEMU binaries for
-custom configurations and individual workloads.
+expects `riscv64-linux-gnu-gcc-14`. Both stages use CPU 7 to match the mail.
+On a host with a different CPU layout, use `--affinity CPU` or
+`--affinity auto` to select the first allowed logical CPU. Use `--dry-run`
+to preview the resolved plans and `run.sh` with QEMU binaries for custom
+configurations and individual workloads.
 
 Four runner options are available:
 
