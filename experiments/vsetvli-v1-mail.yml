@@ -11,7 +11,7 @@ qemu:
   candidate:
     path: null
 host:
-  affinity: [7]
+  affinity: auto
 build:
   cross_cc: riscv64-linux-gnu-gcc-14
   compiler: rvv
