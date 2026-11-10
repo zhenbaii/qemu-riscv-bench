@@ -8,7 +8,7 @@ Usage: ./reproduce.sh BASELINE_COMMIT PATCHED_COMMIT --recipe RECIPE [--affinity
 
 Recipes:
   vsetvli-v1    Focused vsetvli program with perf, then LZ4, zlib and SQLite.
-  vsetvli-v2    Includes vsetvli-v1 and adds a cold TB-link lookup diagnostic.
+  vsetvli-v2    Uses the same workloads and settings as vsetvli-v1.
 
 Use a QEMU checkout with both commits available. The default checkout is
 ../qemu beside this bench repository. Set QEMU_SRC for a different location.

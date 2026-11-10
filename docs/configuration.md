@@ -94,6 +94,9 @@ Included recipes run in the listed order before the recipe's own stages.
 Each included recipe runs once. The same baseline and candidate commits are
 used for all stages.
 
+The supplied `vsetvli-v2` recipe only includes `vsetvli-v1`. The following
+example adds the optional lookup diagnostic in a custom recipe.
+
 ```yaml
 schema: 1
 include: [vsetvli-v1]
