@@ -20,7 +20,7 @@ SECTIONS = {
     'build': {'cross_cc', 'compiler', 'bootstrap_jobs', 'guest_cc1', 'guest_sysroot',
               'toolchain_lock', 'bootstrap_lock', 'jobs', 'march', 'cflags'},
     'guest': {'cpu'},
-    'measurement': {'warmups', 'repetitions', 'timeout', 'min_seconds', 'iterations'},
+    'measurement': {'warmups', 'repetitions', 'timeout', 'min_seconds', 'iterations', 'case'},
     'storage': {'data_dir', 'output', 'offline', 'source_dir'},
     'diagnostics': {'perf', 'lookup_counts', 'diagnose_only', 'profile_vset',
                     'profile_qemu', 'plugin_include', 'perf_profile', 'profile_symbol'},

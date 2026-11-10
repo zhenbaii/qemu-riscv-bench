@@ -86,6 +86,22 @@ includes all sampled user-space cycles, including translated guest code.
 This requires Linux perf and permission to sample user-space hardware events.
 If profiling is unavailable, the summary records the error and keeps the timing results.
 
+## Recipe files
+
+`reproduce.sh --recipe NAME` reads `recipes/NAME.yml`. Use `include` to
+reuse another recipe and `stages` to add experiment files from `experiments/`.
+Included recipes run in the listed order before the recipe's own stages.
+Each included recipe runs once. The same baseline and candidate commits are
+used for all stages.
+
+```yaml
+schema: 1
+include: [vsetvli-v1]
+stages:
+  - config: vsetvli-v2-lookup.yml
+    heading: Cold TB-link lookup
+```
+
 ## Experiment files
 
 Start with a file in `experiments/`, copy it to `*.local.yml`, and fill in local
@@ -102,7 +118,7 @@ paths. The tracked examples contain no QEMU paths or machine-specific core IDs.
 | `host.affinity` | Logical CPU ID list, `auto` for the first allowed CPU, or `null` to inherit the launching mask |
 | `build` | Cross compiler, guest compiler selection, jobs and target flags |
 | `guest.cpu` | QEMU guest CPU string, for runners exposing a CPU option |
-| `measurement` | Warmups, repetitions, timeout, and micro calibration/count |
+| `measurement` | Warmups, repetitions, timeout, and micro calibration/count. The vsetvli runner also accepts a single `case` ID. |
 | `storage` | Data/output paths, offline mode, optional local package source |
 | `diagnostics` | Optional perf, coverage and host-GDB settings |
 

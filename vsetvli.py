@@ -137,16 +137,17 @@ def report(result, output):
         writer = csv.DictWriter(stream, fields, extrasaction='ignore')
         writer.writeheader()
         writer.writerows(result['runs'])
-    lines = ['# vsetvli benchmark', '', 'Status: ' + result['status'], '',
-             'Wall time includes process startup. Diagnostic/perf runs are excluded.', '',
-             '| Case | QEMU | Runs | Median (s) | Min–max (s) | Wall change | Wall / baseline | Faster pairs |',
-             '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
-    for row in result['summary']:
-        lines.append(f"| {row['case']} | {row['variant']} | {row['runs']} | {row['median_seconds']:.6f} | "
-                     f"{row['min_seconds']:.6f}–{row['max_seconds']:.6f} | "
-                     f"{row['wall_change_percent']:.2f}% | {row['wall_ratio']:.3f}x | "
-                     f"{row['faster_pairs']}/{len(row['paired_wall_ratios'])} |")
-    lines += ['', 'Wall / baseline is the ratio of median elapsed times. Lower is faster.', '']
+    lines = ['# vsetvli benchmark', '', 'Status: ' + result['status'], '']
+    if not result['arguments']['diagnose_only']:
+        lines += ['Wall time includes process startup. Diagnostic/perf runs are excluded.', '',
+                  '| Case | QEMU | Runs | Median (s) | Min–max (s) | Wall change | Wall / baseline | Faster pairs |',
+                  '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+        for row in result['summary']:
+            lines.append(f"| {row['case']} | {row['variant']} | {row['runs']} | {row['median_seconds']:.6f} | "
+                         f"{row['min_seconds']:.6f}–{row['max_seconds']:.6f} | "
+                         f"{row['wall_change_percent']:.2f}% | {row['wall_ratio']:.3f}x | "
+                         f"{row['faster_pairs']}/{len(row['paired_wall_ratios'])} |")
+        lines += ['', 'Wall / baseline is the ratio of median elapsed times. Lower is faster.', '']
     if result['diagnostics']:
         lines += ['## Untimed lookup diagnostics', '',
                   'Entries at the tested successor PC; 37 guest iterations per fresh process.', '',
@@ -321,7 +322,7 @@ def main(argv=None, *, prepared_args=None):
             result['host_environment_after'] = build.host_environment()
             result['finished_utc'] = datetime.now(timezone.utc).isoformat()
             report(result, output)
-        print((output / 'summary.md').read_text(), flush=True)
+        build.print_summary(output / 'summary.md')
     return 0
 
 

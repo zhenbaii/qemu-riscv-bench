@@ -8,10 +8,11 @@ Usage: ./reproduce.sh BASELINE_COMMIT PATCHED_COMMIT --recipe RECIPE [--affinity
 
 Recipes:
   vsetvli-v1    Focused vsetvli program with perf, then LZ4, zlib and SQLite.
+  vsetvli-v2    Includes vsetvli-v1 and adds a cold TB-link lookup diagnostic.
 
 Use a QEMU checkout with both commits available. The default checkout is
 ../qemu beside this bench repository. Set QEMU_SRC for a different location.
---dry-run prints both benchmark plans without building or running them.
+--dry-run prints the benchmark plans without building or running them.
 EOF
 }
 
@@ -44,14 +45,12 @@ while (($#)); do
     esac
 done
 
-case "$recipe" in
-    vsetvli-v1)
-        configs=(vsetvli-v1-program.yml vsetvli-v1-mail.yml)
-        headings=('Targeted workloads' 'General workloads')
-        ;;
-    '') echo 'Missing required option --recipe.' >&2; usage >&2; exit 2 ;;
-    *) echo "Unknown recipe: $recipe" >&2; usage >&2; exit 2 ;;
-esac
+if [[ -z $recipe ]]; then
+    echo 'Missing required option --recipe.' >&2
+    usage >&2
+    exit 2
+fi
+stages=$(python3 "$here/recipes.py" "$recipe")
 
 workspace=$(cd -- "$here/../.." && pwd -P)
 if [[ -x $workspace/build-qemu-experiment.sh && -f $workspace/qemu/configure ]]; then
@@ -91,14 +90,14 @@ if ! $dry_run; then
 fi
 
 binaries="$repo/experiment-binaries"
-for index in "${!configs[@]}"; do
-    printf '\n=== %s ===\n' "${headings[index]}"
+while IFS=$'\t' read -r config heading <&9; do
+    printf '\n=== %s ===\n' "$heading"
     QEMU_BENCH_COMBINED_SUMMARY="$summary_file" \
-        "$here/run.sh" --config "$here/experiments/${configs[index]}" \
+        "$here/run.sh" --config "$here/experiments/$config" \
         --qemu "baseline=$binaries/$baseline/qemu-riscv64" \
         --qemu "candidate=$binaries/$candidate/qemu-riscv64" \
         --qemu-commit "baseline=$baseline" --qemu-commit "candidate=$candidate" "${options[@]}"
-done
+done 9<<< "$stages"
 
 if [[ -n $summary_file ]]; then
     printf '\n\n\n=== Combined results ===\n\n'

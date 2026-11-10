@@ -21,6 +21,10 @@
 可用 `--affinity CPU` 指定其他 CPU，用 `--dry-run` 预览两组计划。
 自定义实验或单个负载用 `run.sh`。
 
+比较 v1 和 v2 时，传入对应的两个 commit，并选择 `--recipe vsetvli-v2`。
+它包含 v1 的整套负载，再对 `maxsz = 4` 的路径做一次独立的 lookup 计数。
+该阶段需要 x86-64 宿主、GDB 和带调试符号的 QEMU。
+
 ## 目录
 
 ```text

@@ -1,0 +1,6 @@
+schema: 1
+stages:
+  - config: vsetvli-v1-program.yml
+    heading: Targeted workloads
+  - config: vsetvli-v1-mail.yml
+    heading: General workloads

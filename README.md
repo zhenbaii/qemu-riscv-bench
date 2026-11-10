@@ -29,6 +29,11 @@ effective affinity in their manifests. Use `--affinity CPU` to choose another
 CPU, `--dry-run` to preview the resolved plans, or `run.sh` with QEMU binaries
 for custom configurations and individual workloads.
 
+To compare v1 with v2, pass those two commits and select `--recipe vsetvli-v2`.
+It includes the same v1 workload stages and adds an untimed lookup diagnostic
+for the `maxsz = 4` case. The diagnostic requires host GDB on x86-64 and QEMU
+binaries with debug symbols. See [recipe definitions](docs/configuration.md#recipe-files).
+
 Four runner options are available:
 
 | Entry point | Workload | Preparation |
