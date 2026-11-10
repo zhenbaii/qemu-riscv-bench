@@ -1,0 +1,30 @@
+# Package build comparison from the vsetvli v1 mail, using its amd64 compiler lock.
+schema: 1
+name: vsetvli-v1-mail
+runner: packages
+workloads: [lz4, zlib, sqlite]
+reference: baseline
+qemu:
+  baseline:
+    path: null
+    commit: a3565937b39779d4e3704298095f566e7559ad53
+  candidate:
+    path: null
+host:
+  # The mail's host used CPU 7. Pick an allowed CPU on the reviewer's host.
+  affinity: auto
+build:
+  cross_cc: riscv64-linux-gnu-gcc-14
+  compiler: rvv
+  bootstrap_lock: ../locks/rvv-gcc-14.2.0-amd64.json
+  jobs: 1
+  march: rv64gcv
+  cflags: "" # The package runner supplies -O2 -g0 -mabi=lp64d.
+guest:
+  cpu: rv64,v=true,vlen=128,elen=64
+measurement:
+  warmups: 1
+  repetitions: 3
+  timeout: 7200 # Allow for the SQLite amalgamation build.
+storage:
+  data_dir: ../data

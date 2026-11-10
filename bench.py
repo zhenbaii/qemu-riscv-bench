@@ -9,11 +9,12 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 import sys
 
 import configuration as config
 
-MODULES = {'packages': 'run', 'vsetvli': 'vsetvli', 'vsetivli': 'microbench'}
+MODULES = {'packages': 'run', 'vsetvli': 'vsetvli', 'vsetivli': 'microbench', 'programs': 'programs'}
 SECTIONS = {
     'host': {'affinity'},
     'build': {'cross_cc', 'compiler', 'bootstrap_jobs', 'guest_cc1', 'guest_sysroot',
@@ -22,11 +23,11 @@ SECTIONS = {
     'measurement': {'warmups', 'repetitions', 'timeout', 'min_seconds', 'iterations'},
     'storage': {'data_dir', 'output', 'offline', 'source_dir'},
     'diagnostics': {'perf', 'lookup_counts', 'diagnose_only', 'profile_vset',
-                    'profile_qemu', 'plugin_include'},
+                    'profile_qemu', 'plugin_include', 'perf_profile', 'profile_symbol'},
 }
 PATH_FIELDS = {'guest_cc1', 'guest_sysroot', 'toolchain_lock', 'bootstrap_lock',
                'data_dir', 'output', 'source_dir', 'profile_qemu', 'plugin_include'}
-BOOL_FIELDS = {'offline', 'perf', 'lookup_counts', 'diagnose_only', 'profile_vset'}
+BOOL_FIELDS = {'offline', 'perf', 'lookup_counts', 'diagnose_only', 'profile_vset', 'perf_profile'}
 
 
 def file_path(value, parent):
@@ -86,7 +87,7 @@ def resolve(argv=None):
     parser.add_argument('--qemu', action='append', metavar='LABEL=PATH', help='override a configured path by label')
     parser.add_argument('--qemu-commit', action='append', metavar='LABEL=SHA40')
     parser.add_argument('--reference', help='QEMU label used as statistical reference')
-    parser.add_argument('--affinity', help='host CPU IDs, e.g. 2 or 2-3,6; otherwise config or inherited')
+    parser.add_argument('--affinity', help='host CPU IDs, e.g. 2 or 2-3,6, or auto; otherwise config or inherited')
     common, forwarded = parser.parse_known_args(argv)
     if common.list:
         return {'action': 'list'}
@@ -104,9 +105,10 @@ def resolve(argv=None):
     catalog = config.documents()
     if any(name not in catalog for name in names):
         raise ValueError(f'Unknown workloads: {sorted(set(names) - set(catalog))}')
-    if runner == 'packages' and any(catalog[name]['definition']['kind'] != 'package-build' for name in names):
-        raise ValueError('The packages runner accepts only package-build workloads')
-    if runner != 'packages' and names not in ([], [runner]):
+    kind = {'packages': 'package-build', 'programs': 'guest-program'}.get(runner)
+    if kind and any(catalog[name]['definition']['kind'] != kind for name in names):
+        raise ValueError(f'The {runner} runner accepts only {kind} workloads')
+    if not kind and names not in ([], [runner]):
         raise ValueError(f'The {runner} runner requires workloads: [{runner}]')
     settings = {}
     for section in SECTIONS:
@@ -131,7 +133,7 @@ def resolve(argv=None):
             # The = form also supports compiler flags beginning with a dash.
             configuration_argv.append(f'{option}={value}')
     runner_argv = [*configuration_argv, *forwarded]
-    args = (module.arguments(runner_argv, defaults={'packages': names}) if runner == 'packages'
+    args = (module.arguments(runner_argv, defaults={runner: names}) if kind
             else module.arguments(runner_argv))
     qemus = {}
     for label, value in document.get('qemu', {}).items():
@@ -155,10 +157,12 @@ def resolve(argv=None):
     args.qemu_commit = [f'{label}={value["commit"]}' for label, value in configured if value.get('commit')]
     args.reference = reference
     affinity = common.affinity if common.affinity is not None else document.get('host', {}).get('affinity')
+    if affinity == 'auto':
+        affinity = [min(os.sched_getaffinity(0))]
     requested = config.parse_affinity(affinity)
     args.affinity = ','.join(map(str, sorted(requested))) if requested is not None else None
     args.experiment_record = record
-    selected = args.packages if runner == 'packages' else [runner]
+    selected = getattr(args, runner) if kind else [runner]
     plan = config.manifest(args, [], selected,
                            dict(requested=sorted(requested) if requested is not None else None,
                                 inherited=sorted(os.sched_getaffinity(0)), effective=None), runner=runner)
@@ -191,6 +195,6 @@ def main(argv=None):
 if __name__ == '__main__':
     try:
         sys.exit(main())
-    except (RuntimeError, OSError, ValueError) as error:
+    except (RuntimeError, OSError, ValueError, subprocess.SubprocessError) as error:
         print(f'bench: {error}', file=sys.stderr)
         sys.exit(1)

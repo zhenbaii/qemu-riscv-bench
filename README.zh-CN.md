@@ -3,16 +3,35 @@
 通用项目构建负载和指令 microbenchmark 共用运行入口，支持指定多份 QEMU、
 自动绑核、交替 A/B 测量及结果校验。完整依赖见 [英文 README](README.md)。
 
+## 复现邮件结果
+
+准备一份干净的 QEMU checkout，确保其中已有基线和应用补丁后的两个 commit。
+默认使用 bench 仓库旁边的 `../qemu`，其他位置用 `QEMU_SRC` 指定。
+
+```sh
+./reproduce.sh "$baseline_commit" "$patched_commit" --recipe vsetvli-v1
+```
+
+脚本用同一套配置依次构建两个 commit 的静态 `qemu-riscv64`，并恢复原 checkout。
+`vsetvli-v1` recipe 先跑[专项程序和 perf 采样](experiments/vsetvli-v1-program.yml)，
+再跑[邮件中的 LZ4、zlib、SQLite 构建](experiments/vsetvli-v1-mail.yml)。
+构建负载使用原实验的 amd64 GCC 14.2.0 依赖锁，需要 `riscv64-linux-gnu-gcc-14`。
+bench 默认绑定当前允许使用的第一个逻辑 CPU，可加 `--affinity 7` 沿用邮件里的绑核设置，
+也可加 `--dry-run` 预览两组计划。自定义实验或单个负载用 `run.sh`。
+
 ## 目录
 
 ```text
 workloads/
   packages/              # SQLite、LZ4、zlib、zlib-ng 的版本、来源、SHA-256、recipe
   micro/                 # vsetvli、vsetivli 的 CPU 要求、测试项及输入校验和
+  programs/              # 每次优化可添加自己的 guest 程序和负载定义
 experiments/             # QEMU、基线 label、工具链、绑核、测量轮数等实验配置
+reproduce.sh             # 传两个 QEMU commit，用 --recipe 选择整组负载
 bench.py                 # 统一入口：合并配置、预览、选择运行器
 configuration.py         # YAML 读取、配置快照、CPU 拓扑和绑核
 run.py                   # 通用项目构建运行器
+programs.py              # 编译并直接运行自定义 guest 程序
 vsetvli.py               # vsetvli 小测试运行器
 microbench.py            # vsetivli 小测试运行器
 results/                 # 保留原提交身份的历史结果
@@ -99,3 +118,31 @@ RISC-V `cc1`。它与整个 guest 用户空间内构建的计时范围不同。
 
 配置字段详解见 [docs/configuration.md](docs/configuration.md)。历史结果见
 [历史实验说明](docs/historical-vsetvli.md)，代码来源见 [PROVENANCE.md](PROVENANCE.md)。
+
+## 自定义专项负载
+
+在 `workloads/programs/` 放一个自包含的 C 或汇编文件，以及描述源码、命令行参数和
+预期标准输出的 YAML。可以从 [RVV 数组加法示例](workloads/programs/rvv-add.yml) 开始，
+在实验 YAML 的 `workloads` 中选择用例。
+
+```sh
+./run.sh --config experiments/programs.example.yml \
+  --qemu baseline=/path/to/before/qemu-riscv64 \
+  --qemu candidate=/path/to/after/qemu-riscv64 --affinity 7
+```
+
+宿主交叉编译器先为每个用例生成一份静态 ELF，两版 QEMU 再直接运行同一份 ELF。
+计时包括 QEMU 启动和 guest 执行。结果保存到 `data/programs/`，包含源码和 ELF 的副本及
+哈希、逐轮计时、标准输出和日志。每轮检查退出码和标准输出。编译参数、绑核、预热和轮数
+由实验配置控制，示例用 `-O3 -march=rv64gcv`。具体字段见 [配置说明](docs/configuration.md)。
+
+[vsetvli v1 专项预设](experiments/vsetvli-v1-program.yml)在热循环中交替设置满 VL 和较短 VL。
+它包含在 `reproduce.sh ... --recipe vsetvli-v1` 中。已有两份 QEMU 时，也可单独运行专项预设。
+
+```sh
+./run.sh --config experiments/vsetvli-v1-program.yml \
+  --qemu "baseline=$baseline_qemu" --qemu "candidate=$patched_qemu"
+```
+
+先完成五对正式计时，再对两份 QEMU 各做一次宿主 perf 采样。摘要记录耗时变化和
+`helper_lookup_tb_ptr` 自身的用户态周期占比，运行目录保留原生 perf 文本报告和 `perf.data`。

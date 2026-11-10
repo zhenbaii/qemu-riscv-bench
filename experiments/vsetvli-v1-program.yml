@@ -1,0 +1,27 @@
+schema: 1
+name: vsetvli-v1-program
+runner: programs
+workloads: [vsetvli-chain]
+reference: baseline
+qemu:
+  baseline:
+    path: null
+    commit: a3565937b39779d4e3704298095f566e7559ad53
+  candidate:
+    path: null
+host:
+  affinity: auto
+build:
+  cross_cc: riscv64-linux-gnu-gcc
+  march: rv64gcv
+  cflags: "-nostdlib"
+guest:
+  cpu: rv64,v=true,vlen=128,elen=64
+measurement:
+  warmups: 1
+  repetitions: 5
+diagnostics:
+  perf_profile: true
+  profile_symbol: helper_lookup_tb_ptr
+storage:
+  data_dir: ../data

@@ -1,0 +1,23 @@
+schema: 1
+name: rvv-program-example
+runner: programs
+workloads: [rvv-add]
+reference: baseline
+qemu:
+  baseline:
+    path: null
+  candidate:
+    path: null
+host:
+  affinity: auto
+build:
+  cross_cc: riscv64-linux-gnu-gcc
+  march: rv64gcv
+  cflags: "-O3"
+guest:
+  cpu: rv64,v=true,vlen=128,elen=64
+measurement:
+  warmups: 1
+  repetitions: 3
+storage:
+  data_dir: ../data

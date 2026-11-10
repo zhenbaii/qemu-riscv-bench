@@ -1,0 +1,8 @@
+schema: 1
+id: rvv-add
+kind: guest-program
+source:
+  path: rvv-add.c
+args: ["20000"]
+expected_stdout: |
+  rvv-add: ok

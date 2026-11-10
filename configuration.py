@@ -83,6 +83,18 @@ def documents(directory=WORKLOADS) -> dict:
             mirrors = source.get('mirrors', [])
             if not isinstance(mirrors, list) or any(not isinstance(url, str) for url in mirrors):
                 raise ValueError(f'{path}: mirrors must be a list of URLs')
+        elif value.get('kind') == 'guest-program':
+            only_keys(value, ('schema', 'id', 'kind', 'source', 'args', 'expected_stdout'), str(path))
+            source = value.get('source')
+            only_keys(source, ('path',), f'{path}: source')
+            filename = source.get('path')
+            if not isinstance(filename, str) or Path(filename).suffix not in ('.c', '.S', '.s'):
+                raise ValueError(f'{path}: source.path must name a .c, .S or .s file')
+            args = value.get('args', [])
+            if not isinstance(args, list) or any(not isinstance(arg, str) or '\0' in arg for arg in args):
+                raise ValueError(f'{path}: args must be a list of strings')
+            if not isinstance(value.get('expected_stdout'), str):
+                raise ValueError(f'{path}: expected_stdout must be a string')
         elif value.get('kind') == 'micro':
             only_keys(value, ('schema', 'id', 'kind', 'runner', 'cpu', 'source', 'cases'), str(path))
             if value.get('runner') not in ('vsetivli', 'vsetvli') or not isinstance(value.get('cpu'), str):

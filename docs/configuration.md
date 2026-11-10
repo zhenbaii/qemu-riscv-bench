@@ -37,6 +37,55 @@ manifest with their original SHA-256. Changing a workload version or definition
 creates a new measurement identity. Archived JSON results retain their original
 historical schema and are not rewritten by this migration.
 
+### Custom guest programs
+
+Add a YAML definition under `workloads/programs/` for a local guest workload:
+
+```yaml
+schema: 1
+id: rvv-add
+kind: guest-program
+source:
+  path: rvv-add.c
+args: ["20000"]
+expected_stdout: |
+  rvv-add: ok
+```
+
+`source.path` is relative to the workload YAML unless absolute. It points to
+one self-contained `.c`, `.S` or `.s` file. The host cross compiler builds a
+static RISC-V ELF with `-O3 -g0 -march=rv64gcv -mabi=lp64d` by default. Use
+`build.march` and `build.cflags` to select other flags. For assembly providing
+its own `_start`, pass `-nostdlib` in `build.cflags`.
+
+Set `runner: programs` and list the desired IDs in `workloads` in an experiment
+file. `args` are literal strings passed to the guest program. A successful
+sample exits zero and its stdout matches `expected_stdout` byte for byte,
+including the final newline if present. Use `expected_stdout: ""` for a
+self-checking workload that exits silently.
+
+The runner times fresh QEMU processes, including startup. Choose arguments
+that make the guest do enough work per process for the comparison. Source
+compilation, warmups and output checks are outside the measured samples.
+Session directories under `data/programs/` preserve the source snapshot, ELF,
+their SHA-256 values, per-run output and raw timing samples.
+
+Enable host sampling for a `programs` experiment with:
+
+```yaml
+diagnostics:
+  perf_profile: true
+  profile_symbol: helper_lookup_tb_ptr
+```
+
+After timing completes, the runner repeats each selected program once per QEMU
+under `perf record -e cycles:u` at a requested 999 Hz. It saves `perf.data`
+and the native text report under `profile-<label>/`. The optional
+`profile_symbol` adds a row for the symbol's self overhead. The denominator
+includes all sampled user-space cycles, including translated guest code.
+This requires Linux perf and permission to sample user-space hardware events.
+If profiling is unavailable, the summary records the error and keeps the timing results.
+
 ## Experiment files
 
 Start with a file in `experiments/`, copy it to `*.local.yml`, and fill in local
@@ -46,11 +95,11 @@ paths. The tracked examples contain no QEMU paths or machine-specific core IDs.
 | --- | --- |
 | `schema` | Required integer `1` |
 | `name` | Experiment name stored with the results |
-| `runner` | `packages`, `vsetvli`, or `vsetivli` |
-| `workloads` | Package IDs, or the matching micro suite ID |
+| `runner` | `packages`, `programs`, `vsetvli`, or `vsetivli` |
+| `workloads` | Package IDs, guest-program IDs, or the matching micro suite ID |
 | `reference` | QEMU label used for comparison, independent of mapping order |
 | `qemu` | Mapping of labels to `path` and optional full `commit` SHA40 |
-| `host.affinity` | Logical CPU ID list; `null` inherits the launching mask |
+| `host.affinity` | Logical CPU ID list, `auto` for the first allowed CPU, or `null` to inherit the launching mask |
 | `build` | Cross compiler, guest compiler selection, jobs and target flags |
 | `guest.cpu` | QEMU guest CPU string, for runners exposing a CPU option |
 | `measurement` | Warmups, repetitions, timeout, and micro calibration/count |
@@ -63,7 +112,7 @@ expanded; environment-variable interpolation is not performed. For example,
 `data/` directory. Command-line paths resolve from the working directory.
 
 Command-line scalar values override the experiment, which overrides runner
-defaults. Positional package IDs override the configured package list.
+defaults. Positional package or guest-program IDs override the corresponding workload list.
 Repeated `--qemu LABEL=PATH` and `--qemu-commit LABEL=SHA40` update the corresponding
 label. Use `--reference LABEL` to override the configured reference. A real run
 requires a path for every configured QEMU label; a preview can retain `null`.
@@ -110,6 +159,11 @@ set. A requested CPU outside the inherited set is rejected. The harness applies
 the mask and reads it back; a partial application is an error. It records
 requested, inherited, and effective values. With `null`, it records the
 inherited mask without changing it.
+
+`host.affinity: auto` or `--affinity auto` selects the lowest logical CPU ID
+in the launching process's allowed set. The preview shows that choice as
+the requested mask. A run applies and records it through the same affinity
+path as an explicit CPU list.
 
 Package preparation/bootstrap happens before package measurement affinity is
 applied. Configure, probes, warmups, measured package builds, and their child

@@ -13,7 +13,6 @@ from pathlib import Path
 import platform
 import resource
 import shutil
-import statistics
 import struct
 import subprocess
 import sys
@@ -21,6 +20,7 @@ import time
 
 import run as build
 import configuration
+from measurement import summarize
 from toolchain import sha256, write_json
 
 HERE = Path(__file__).resolve().parent
@@ -126,32 +126,6 @@ def execute(name, variant, inputs, n, directory, tag, timeout, perf=False):
         row['counters'] = counters
         row['timing_usable'] = False
     return row
-
-
-def summarize(rows, names, labels):
-    summaries = []
-    for name in names:
-        measured = [r for r in rows if r['case'] == name and r['phase'] == 'measured']
-        reference = {r['pair']: r['wall_seconds'] for r in measured if r['variant'] == labels[0]}
-        if not reference:
-            continue
-        base = statistics.median(reference.values())
-        for label in labels:
-            selected = [r for r in measured if r['variant'] == label]
-            if not selected:
-                continue
-            values = [r['wall_seconds'] for r in selected]
-            median = statistics.median(values)
-            ratio = median / base
-            pairs = [r['wall_seconds'] / reference[r['pair']]
-                     for r in selected if r['pair'] in reference]
-            summaries.append(dict(case=name, variant=label, runs=len(values), median_seconds=median,
-                                  min_seconds=min(values), max_seconds=max(values),
-                                  stddev_seconds=statistics.stdev(values) if len(values) > 1 else None,
-                                  wall_change_percent=100 * (ratio - 1), wall_ratio=ratio,
-                                  paired_wall_ratios=pairs,
-                                  faster_pairs=sum(value < 1 for value in pairs)))
-    return summaries
 
 
 def report(result, output):
@@ -262,12 +236,14 @@ def main(argv=None, *, prepared_args=None):
         output.mkdir(parents=True, exist_ok=False)
         print('Results:', output, flush=True)
         shutil.copy2(HERE / 'vsetvli.py', output / 'vsetvli.py')
+        shutil.copy2(HERE / 'measurement.py', output / 'measurement.py')
         result = dict(schema=1, status='running', cpu=CPU, qemu=qemus, cases=names,
                       arguments={k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
                       started_utc=datetime.now(timezone.utc).isoformat(),
                       host_environment_before=build.host_environment(),
                       host=dict(system=platform.system(), release=platform.release(), machine=platform.machine()),
-                      scripts_sha256={p.name: sha256(p) for p in (HERE / 'vsetvli.py', HERE / 'run.py', HERE / 'toolchain.py')},
+                      scripts_sha256={name: sha256(HERE / name) for name in
+                                      ('vsetvli.py', 'run.py', 'toolchain.py', 'measurement.py')},
                       outliers_removed=0, order='AB/BA alternating; rotation for more than two QEMUs',
                       timed_instrumentation='none', runs=[], validation=[], diagnostics=[], perf_runs=[])
         report(result, output)

@@ -199,17 +199,25 @@ def host_environment() -> dict:
             'ac_online': {str(p): read(p) for p in Path('/sys/class/power_supply').glob('*/online')}}
 
 
-def invoke(argv: list[str], cwd: Path, env: dict, log: Path, timeout: float) -> dict:
+def invoke(argv: list[str], cwd: Path, env: dict, log: Path, timeout: float, *,
+           stdout: Path | None = None) -> dict:
     before = resource.getrusage(resource.RUSAGE_CHILDREN)
     started_utc = datetime.now(timezone.utc).isoformat()
     started = time.perf_counter()
     with log.open('ab') as stream:
         stream.write(('$ ' + shlex.join(argv) + '\n').encode())
         stream.flush()
-        process = subprocess.Popen(argv, cwd=cwd, env=env, stdout=stream, stderr=subprocess.STDOUT,
+        process = subprocess.Popen(argv, cwd=cwd, env=env,
+                                   stdout=subprocess.PIPE if stdout else stream,
+                                   stderr=stream if stdout else subprocess.STDOUT,
                                    start_new_session=True)
         try:
-            code = process.wait(timeout=timeout)
+            if stdout is None:
+                code = process.wait(timeout=timeout)
+            else:
+                # Waiting on the output pipe avoids polling delays in short guest runs.
+                captured, _ = process.communicate(timeout=timeout)
+                code = process.returncode
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             import signal
             os.killpg(process.pid, signal.SIGTERM)
@@ -221,6 +229,8 @@ def invoke(argv: list[str], cwd: Path, env: dict, log: Path, timeout: float) -> 
             raise
     after = resource.getrusage(resource.RUSAGE_CHILDREN)
     finished = time.perf_counter()
+    if stdout is not None:
+        stdout.write_bytes(captured)
     result = {'wall_seconds': finished - started,
               'started_utc': started_utc, 'started_monotonic_seconds': started,
               'finished_monotonic_seconds': finished,
@@ -448,13 +458,11 @@ def report(rows: list[dict], session: Path, status: str) -> None:
         writer = csv.DictWriter(stream, fields, extrasaction='ignore')
         writer.writeheader()
         writer.writerows(measured)
-    lines = ['# Standalone upstream build benchmark', '', f'Status: {status}', '',
-             'Scope: RISC-V cc1 under the selected QEMU; host make/GCC driver/cross binutils.',
-             'Configure, source preparation, warmups, validation and coverage are excluded from timing.', '',
+    lines = ['# Package build benchmark', '', f'Status: {status}', '',
+             '## Build time', '',
              '| Package | QEMU | Runs | Median wall (s) | Min–max (s) | Stddev (s) | Wall change | Wall / baseline |',
              '| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |']
     stats = []
-    notes = []
     consistent = True
     for package in dict.fromkeys(r['package'] for r in measured):
         group = [r for r in measured if r['package'] == package]
@@ -476,19 +484,14 @@ def report(rows: list[dict], session: Path, status: str) -> None:
                          f"{min(values):.3f}–{max(values):.3f} | {sd} | "
                          f"{stat['wall_change_percent']:.2f}% | {ratio:.3f}x |")
         hashes = {json.dumps(r['artifacts'], sort_keys=True) for r in group}
-        same = len(hashes) == 1
-        consistent &= same
-        notes += [f"{package}: artifacts byte-identical across measured builds: "
-                  + ('not assessed (one build)' if len(group) < 2 else 'yes' if same else 'NO') + '.', '']
-    lines += ['', *notes]
+        consistent &= len(hashes) == 1
     for row in rows:
         if row.get('coverage_run'):
-            lines += [f"Untimed {row['package']} / {row['variant']} dynamic vector configuration counts: "
-                      + json.dumps(row['vset_counts']) + '.', '']
+            lines += ['', f"Untimed {row['package']} / {row['variant']} dynamic vector configuration counts: "
+                      + json.dumps(row['vset_counts']) + '.']
             if row['vset_counts']['vsetivli'] == 0:
-                lines += ['This workload did not execute vsetivli: its timings cannot demonstrate the vsetivli optimization.', '']
-    lines += ['A different compiler/runtime is a new workload: do not reuse historical measurements.', '']
-    (session / 'summary.md').write_text('\n'.join(lines))
+                lines += ['', 'This workload did not execute vsetivli: its timings cannot demonstrate the vsetivli optimization.']
+    (session / 'summary.md').write_text('\n'.join(lines) + '\n')
     write_json(session / 'results.json', {'status': status, 'statistics': stats,
                                         'artifacts_identical': consistent, 'runs': rows})
 

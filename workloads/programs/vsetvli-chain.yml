@@ -1,0 +1,6 @@
+schema: 1
+id: vsetvli-chain
+kind: guest-program
+source:
+  path: vsetvli-chain.S
+expected_stdout: ""
