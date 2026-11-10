@@ -1,329 +1,45 @@
-# qemu-riscv-bench
+# QEMU RISC-V benchmark
 
-Reproduce QEMU RISC-V user-mode performance measurements with explicit emulator
-binaries, checked guest outputs, and retained per-run samples.
+[中文](README.zh-CN.md)
 
-Workloads are defined in [`workloads/`](workloads/). QEMU identities, host
-affinity, compiler choices, and measurement parameters belong in separate
-[`experiments/`](experiments/) YAML files. `run.sh` is the common entry point.
-Configuration reference: [`docs/configuration.md`](docs/configuration.md).
+## Reproduce a patch
 
-For a patch reproduction, prepare a clean QEMU checkout with both commits
-available and install the prerequisites below. Put the checkout beside this
-repository as `../qemu`, or set `QEMU_SRC` to its path.
+The supplied recipes use x86-64 Linux, Python 3.12+, the QEMU build
+dependencies, `riscv64-linux-gnu-gcc`, and `riscv64-linux-gnu-gcc-14` (14.2.0).
+Install Linux `perf` to collect profiles.
 
-```sh
-./reproduce.sh "$baseline_commit" "$patched_commit" --recipe vsetvli-v1
-```
-
-The launcher builds a static `qemu-riscv64` from each commit with the same
-configure arguments and restores the checkout after each build. The
-`vsetvli-v1` recipe first runs the [focused program with perf](experiments/vsetvli-v1-program.yml),
-then the [LZ4, zlib, and SQLite builds from the mail](experiments/vsetvli-v1-mail.yml).
-After both stages finish, the terminal repeats their summaries together under
-`Combined results`.
-The package preset uses the original amd64 GCC 14.2.0 bootstrap lock and
-expects `riscv64-linux-gnu-gcc-14`. Both stages automatically pin to the
-lowest logical CPU allowed by the launcher's affinity mask and record the
-effective affinity in their manifests. Use `--affinity CPU` to choose another
-CPU, `--dry-run` to preview the resolved plans, or `run.sh` with QEMU binaries
-for custom configurations and individual workloads.
-
-To compare v1 with v2, pass those two commits and select `--recipe vsetvli-v2`.
-Both recipes run the same workloads with the same settings.
-
-Four runner options are available:
-
-| Entry point | Workload | Preparation |
-| --- | --- | --- |
-| `vsetvli.py` | Eight libc-free loops covering immediate/register vtype, zero-register forms, 4/8/16-byte vector capacities, and a scalar control | RISC-V cross assembler/linker; no downloads |
-| `microbench.py` | A libc-free `vsetivli` state-switching loop and scalar control | RISC-V cross assembler/linker; no downloads |
-| `run.sh` | Clean builds of LZ4 1.10.0, zlib 1.3.1, SQLite 3.45.1, and zlib-ng 2.2.3, with RISC-V GCC `cc1` executed by QEMU | Pinned package sources and a guest compiler |
-| `run.sh --runner programs` | Direct execution of custom C or assembly guest programs, such as the [RVV array addition example](workloads/programs/rvv-add.c) | RISC-V Linux cross compiler and static libraries for programs that use them |
-
-Start with a dry run to inspect the configuration. The package benchmark's
-default RVV compiler needs a substantial one-time GCC build. Python 3.12+ and
-PyYAML are required; dependencies are listed in `requirements.txt`.
-
-## Inspect and configure an experiment
+Put a clean QEMU checkout containing both commits at `../qemu` relative to
+this repository, or set `QEMU_SRC` to the checkout path. Run the commands from
+the benchmark repository.
 
 ```sh
 python3 -m venv .venv
 . .venv/bin/activate
 python3 -m pip install -r requirements.txt
 
-./run.sh --list
-./run.sh --list-cpus
-./run.sh --config experiments/packages.example.yml --dry-run
-
-cp experiments/packages.example.yml experiments/packages.local.yml
+./reproduce.sh BASELINE_COMMIT PATCHED_COMMIT --recipe vsetvli-v2
 ```
 
-Edit `packages.local.yml` to fill in the before/after QEMU paths and, when
-available, their full commit IDs. Set `host.affinity: [2]` to select logical CPU
-2 on your machine, or leave it `null` to inherit the current mask. The CPU ID is
-an example, not a built-in default. The `.local.yml` files are ignored by Git.
+The launcher builds both QEMUs and pins runs to the first allowed logical CPU.
+`vsetvli-v1` and `vsetvli-v2` run the same focused program and LZ4, zlib, and
+SQLite builds. The first package run builds and caches the guest `cc1`.
+Add `--dry-run` to preview the plan or `--affinity CPU` to select a logical CPU.
 
-Preview the final settings, optionally overriding values on the command line:
-
-```sh
-./run.sh --config experiments/packages.local.yml --affinity 2 --jobs 1 --dry-run
-```
-
-`--dry-run` reads YAML and host affinity, then prints resolved JSON. It does not
-execute QEMU (even `--version`), run build tools, download inputs, apply affinity,
-or create output directories. QEMU paths may remain `null` while previewing an
-example. A real run rejects unfilled paths.
-
-To execute that experiment when ready, use the same command without `--dry-run`.
-For instruction microbenchmarks, choose `experiments/vsetvli.example.yml` or
-`experiments/vsetivli.example.yml`. The direct Python entry points below remain
-available for compatibility.
-
-Every executed session writes `manifest.json` containing the experiment and
-workload definitions with SHA-256 values, resolved arguments, QEMU identities,
-and requested/inherited/effective affinity. The existing raw timing and metadata
-files remain available alongside it.
-
-## Requirements
-
-Use a Linux host, Python 3.12+, a RISC-V Linux cross toolchain, and one or more
-`qemu-riscv64` binaries with the RISC-V Vector extension enabled.
-`reproduce.sh` also needs the QEMU host build dependencies, including Ninja,
-pkg-config and the development libraries for a static Linux-user build.
-When using `run.sh` directly, supply QEMU paths. The experiment's `reference`
-or `--reference LABEL` selects the statistical reference; otherwise the first label is used.
-The package runner currently expects the Debian/Ubuntu cross-toolchain layout;
-the libc-free loops need only the cross compiler and binutils.
-
-For a Debian/Ubuntu host, the package names are:
-
-```sh
-sudo apt install python3 python3-venv gcc g++ make dpkg gcc-riscv64-linux-gnu \
-  binutils-riscv64-linux-gnu libc6-dev-riscv64-cross cmake
-```
-
-The optional RVV GCC bootstrap currently requires a **14.2.0** RISC-V cross
-driver. Check `riscv64-linux-gnu-gcc -dumpfullversion`; pass `--cross-cc` to
-select a matching driver. `--compiler debian` and custom guest compilers are
-other options, described below. CMake is needed only for zlib-ng. `perf`, GDB,
-and QEMU plugin headers are optional diagnostic dependencies.
-
-## Quick start: vsetvli
-
-Run from this repository's root, replacing the two QEMU paths and CPU affinity
-with your own. Omit `--affinity` to inherit the current affinity.
-
-```sh
-python3 vsetvli.py --list
-
-python3 vsetvli.py \
-  --qemu baseline=/absolute/path/before/qemu-riscv64 \
-  --qemu candidate=/absolute/path/after/qemu-riscv64 \
-  --affinity 2 --repetitions 9 --warmups 1
-```
-
-The script builds each guest, checks iterations 1, 2, 37, and 1000 against a
-scalar/CSR/vector oracle, calibrates a common iteration count for all QEMUs
-within each case, and measures alternating AB/BA pairs. The default minimum
-calibration duration is one second. Every guest uses
-`rv64,v=true,vlen=128,elen=64`; the oracle and 4/8/16-byte cases use this fixed
-VLEN. Outputs include the accumulated scalar result, `vl`, `vtype`, `vstart`,
-and the vector bytes. The scalar guest is compiled with `-march=rv64gc` and its
-disassembly is checked for vector instructions.
-
-For a quick functional smoke run, use `--iterations 1000 --warmups 0
---repetitions 1`. Such a short run is dominated by startup and is unsuitable
-for a performance claim. A fixed count such as `--iterations 100000000`
-skips calibration. Select cases with repeated `--case NAME` arguments.
-
-Results appear in a new `data/vsetvli/<UTC timestamp>/` directory:
-
-- `summary.md` reports medians, ranges, elapsed-time changes and ratios relative to the baseline, and paired wins.
-- `samples.csv`: every calibration, warmup, and measured sample, with its phase.
-- `results.json`: arguments, QEMU hashes/commits, raw samples, checks, and host settings.
-- `inputs/`: assembly snapshots, rebuilt ELF files, disassemblies, symbols, and build commands.
-- `samples/`: stdout and stderr for each execution.
-
-Use `--output NEW_DIRECTORY` or `--data-dir DIRECTORY` to select another
-destination. Existing output directories are never overwritten. Failed runs
-return nonzero and retain a result marked `failed`.
-
-## Lookup counts and hardware counters
-
-These are separate executions after the uninstrumented measurements:
-
-```sh
-python3 vsetvli.py \
-  --qemu baseline=/absolute/path/before/qemu-riscv64 \
-  --qemu candidate=/absolute/path/after/qemu-riscv64 \
-  --affinity 2 --perf --lookup-counts
-```
-
-`--perf` records host user-mode cycles, instructions, branches, and branch misses.
-`--lookup-counts` requires an x86-64 host and unstripped, non-LTO QEMUs with
-usable debug information for `CPURISCVState`, `RISCVCPU`, `helper_lookup_tb_ptr`,
-`riscv_get_tb_cpu_state`, and `cpu_tb_exec`. It runs each vector fixture for 37
-iterations under **host GDB**, without the guest gdbstub. Counts at the tested
-instruction's successor PC are reported separately for helper entry, TB-state
-extraction, and dispatcher entry. TB-state extraction is a proxy for lookup-key
-requests in these exception-free fixtures, not an independent count of hash
-table misses. The implementation assumes the x86-64 SysV ABI and QEMU's
-24-byte `get_tb_cpu_state` return type; recheck that assumption when adapting it
-to other QEMU versions. An unsupported setup fails rather than reporting zero.
-
-Use `--diagnose-only` to run correctness checks and GDB diagnostics without
-performance measurements. These counts are useful for distinguishing repeated
-lookups from one-time direct-link establishment. They are not timing samples.
-
-## Package builds
+## Use prebuilt QEMUs
 
 ```sh
 ./run.sh --list
 
-./run.sh zlib \
-  --qemu baseline=/absolute/path/before/qemu-riscv64 \
-  --qemu candidate=/absolute/path/after/qemu-riscv64 \
-  --affinity 2 --jobs 1 --warmups 1 --repetitions 5
+./run.sh --config experiments/vsetvli-v1-mail.yml zlib \
+  --qemu baseline=/path/to/baseline/qemu-riscv64 \
+  --qemu candidate=/path/to/patched/qemu-riscv64
 ```
 
-The default `--compiler rvv` downloads GCC 14.2.0 and cross-builds a static native
-RISC-V `cc1` whose own code uses `-march=rv64gcv`. GCC's release archive has a
-pinned SHA-512; the package releases have pinned SHA-256 values in
-[`workloads/packages/`](workloads/packages/). The x86-64 dependency lock used for the
-historical compiler build is in [`locks/`](locks/):
+Use `./run.sh --config experiments/vsetvli-v1-program.yml` with the same
+`--qemu` options to run just the focused program. For custom workloads, see
+the [YAML reference](docs/configuration.md).
 
-```sh
-./run.sh zlib --prepare-only \
-  --bootstrap-lock locks/rvv-gcc-14.2.0-amd64.json
-```
+The terminal prints the combined results for a recipe. Summaries and raw
+samples are saved under `data/programs/` and `data/runs/`.
 
-The bootstrap supports x86-64 and AArch64 Linux hosts. Its first build requires
-several GB of disk and additional build time, all outside the measurements.
-On AArch64, omit the amd64 lock and retain the generated architecture-specific
-`bootstrap.lock.json`. Cache downloads and locks are kept in `data/cache/`.
-Old Debian package URLs may eventually disappear; preserve the checked archives
-and locks for long-term reproduction.
-
-zlib's release asset and fossil mirror must match the same fixed SHA-256.
-Alternative download URLs do not change the source version or accepted bytes.
-
-The smaller `--compiler debian` mode extracts a distribution RISC-V compiler
-and runtime without installing them. It requires a matching host cross-driver
-version. It is a different workload and may execute few of the vector
-instructions relevant to a patch. Its generated dependency lock can be reused
-with `--toolchain-lock FILE`.
-Debian package hashes come from the HTTPS Packages index; this lightweight
-extractor does not implement APT Release-signature verification.
-
-To supply an existing native RISC-V compiler:
-
-```sh
-./run.sh zlib \
-  --qemu baseline=/absolute/path/before/qemu-riscv64 \
-  --qemu candidate=/absolute/path/after/qemu-riscv64 \
-  --cross-cc /absolute/path/to/riscv64-linux-gnu-gcc \
-  --guest-cc1 /absolute/path/to/riscv64/cc1 \
-  --guest-sysroot /absolute/path/to/guest-runtime \
-  --affinity 2 --jobs 1 --warmups 1 --repetitions 5
-```
-
-The guest compiler and host cross driver must match. For a static `cc1`, supply
-an existing empty directory as `--guest-sysroot`. Target program headers and
-libraries come from the host cross toolchain's `/usr/<target>/` directory;
-`--guest-sysroot` supplies the runtime of the guest compiler itself.
-
-Once the cache is populated, add `--offline` to prohibit downloads. Use
-`--source-dir DIRECTORY` with one selected package for local sources; builds
-operate on copies. A shared data directory is locked against concurrent runs.
-
-### What is timed
-
-```text
-host make / CMake
-  -> host RISC-V GCC driver
-     -> selected qemu-riscv64 -> native RISC-V cc1
-     -> host RISC-V assembler / linker
-```
-
-The elapsed time covers a clean package build with **emulated compiler stages**.
-Preparation, configure, warmups, and validation are excluded. Every round starts
-with a fresh source copy. Defaults are `-O2 -g0 -march=rv64gcv -mabi=lp64d`, no
-LTO, and one build job. The driver, make, assembler, and linker run on the host;
-this is not a whole guest userspace build. The compiler's own build flags and
-the flags it uses to compile a package are recorded separately.
-
-Results in `data/runs/<UTC timestamp>/` include per-round timing, compiler
-invocations, build/check logs, artifact hashes, source/toolchain fingerprints,
-and metadata. Built artifacts must be byte-identical across measured rounds.
-LZ4 and zlib checks run their produced programs; SQLite checks queries,
-persistence, and database integrity; zlib-ng checks compression round trips.
-
-For untimed dynamic `vsetivli`/`vsetvli`/`vsetvl` instruction counts, add
-`--profile-vset --plugin-include /path/to/qemu/include/plugins`. Supply
-`--profile-qemu PATH` if the measured QEMUs lack plugin support. Building the
-plugin requires a host C compiler, pkg-config, and GLib headers. Unlike
-`vsetvli.py --perf`, the package runner's `--perf` wraps the measured build;
-compare only runs made with the same instrumentation setting.
-
-## vsetivli loop
-
-```sh
-python3 microbench.py \
-  --qemu baseline=/absolute/path/before/qemu-riscv64 \
-  --qemu candidate=/absolute/path/after/qemu-riscv64 \
-  --affinity 2 --repetitions 9
-```
-
-This older fixture switches between `e32/AVL=4` and `e16/AVL=8`, executes two
-`vsetivli` instructions per loop, and records direct-link edges in a separate
-short `-d exec` run. Its scalar control has no libc/CRT dependency. It tests
-`vsetivli`; use `vsetvli.py` for the reviewer-followup immediate-vtype cases.
-
-## Custom guest programs
-
-Add a self-contained C or assembly source and a definition under
-`workloads/programs/`. Start from `experiments/programs.example.yml` and
-select your workload IDs in the experiment. Each source is cross-compiled
-once into a static ELF that all QEMU variants run directly. The runner checks
-the exit code and expected stdout on every execution. Results include source
-and ELF snapshots, build commands, output, and paired timing samples.
-See [the configuration reference](docs/configuration.md#custom-guest-programs).
-
-The [focused vsetvli program](experiments/vsetvli-v1-program.yml) runs as part of
-`reproduce.sh ... --recipe vsetvli-v1`. To run it alone with prebuilt QEMUs:
-
-```sh
-./run.sh --config experiments/vsetvli-v1-program.yml \
-  --qemu "baseline=$baseline_qemu" --qemu "candidate=$patched_qemu"
-```
-
-The preset measures five pairs and then profiles each QEMU with host
-`perf record`. The summary includes the wall-time difference and the share of
-sampled user-space cycles attributed to `helper_lookup_tb_ptr` itself. The run
-directory preserves each native perf report and its `perf.data`.
-
-## Revisions, historical data, and checks
-
-Build the before/after QEMUs with the same host compiler and configuration.
-Pass full commits with repeated `--qemu-commit LABEL=SHA40`. The harness also
-recognizes a binary's sibling `metadata.json` containing `sha256` and `commit`,
-and rejects a checksum mismatch. With `reproduce.sh`, the launcher resolves
-the commits and the build step saves the QEMU metadata automatically.
-
-The [historical v1/v2 data](results/20261106-vsetvli-v1-v2/) records its original
-QEMU identities and all 144 measured microbenchmark samples. See
-[`docs/historical-vsetvli.md`](docs/historical-vsetvli.md) for the scope and
-limitations. These are archived measurements made before this repository was
-assembled; they are not results of running this reorganized harness.
-
-The [measurement protocol](docs/protocol.md) explains order, timing boundaries,
-and controls. Run the harness checks with:
-
-```sh
-python3 -m unittest discover -s tests -v
-```
-
-The harness and fixtures were developed with AI assistance; see
-[`PROVENANCE.md`](PROVENANCE.md). Downloaded projects retain their upstream
-licenses. [中文说明](README.zh-CN.md).
+[Measurement protocol](docs/protocol.md) · [Provenance](PROVENANCE.md)
