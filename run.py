@@ -34,6 +34,15 @@ def command_output(argv: list[str]) -> str:
     return subprocess.check_output(argv, text=True, stderr=subprocess.STDOUT).strip()
 
 
+def print_summary(path: Path) -> None:
+    summary = path.read_text()
+    print(summary, flush=True)
+    combined = os.environ.get('QEMU_BENCH_COMBINED_SUMMARY')
+    if combined:
+        with Path(combined).open('a') as stream:
+            stream.write(summary + '\n')
+
+
 def executable(name: str) -> str:
     path = shutil.which(name)
     if not path:
@@ -751,7 +760,7 @@ def main(argv=None, *, prepared_args=None) -> int:
             metadata['microbench'] = str(micro_output)
             print((micro_output / 'summary.md').read_text(), flush=True)
         metadata['status'] = 'complete'
-        print((session / 'summary.md').read_text(), flush=True)
+        print_summary(session / 'summary.md')
         return 0
     except BaseException as error:
         metadata.update({'status': 'failed', 'error': str(error), 'exception': type(error).__name__})

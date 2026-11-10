@@ -217,5 +217,5 @@ def main(*, prepared_args):
             result['finished_utc'] = datetime.now(timezone.utc).isoformat()
             result['host_environment_after'] = build.host_environment()
             report(result, output)
-    print((output / 'summary.md').read_text(), flush=True)
+    build.print_summary(output / 'summary.md')
     return 0

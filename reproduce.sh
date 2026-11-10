@@ -77,6 +77,7 @@ if [[ $baseline == "$candidate" ]]; then
     exit 2
 fi
 
+summary_file=
 if ! $dry_run; then
     for commit in "$baseline" "$candidate"; do
         if [[ -n $workspace_builder ]]; then
@@ -85,13 +86,21 @@ if ! $dry_run; then
             "$here/scripts/build-qemu.sh" "$repo" "$commit" "$commit" user
         fi
     done
+    summary_file=$(mktemp)
+    trap 'rm -- "$summary_file"' EXIT
 fi
 
 binaries="$repo/experiment-binaries"
 for index in "${!configs[@]}"; do
     printf '\n=== %s ===\n' "${headings[index]}"
-    "$here/run.sh" --config "$here/experiments/${configs[index]}" \
+    QEMU_BENCH_COMBINED_SUMMARY="$summary_file" \
+        "$here/run.sh" --config "$here/experiments/${configs[index]}" \
         --qemu "baseline=$binaries/$baseline/qemu-riscv64" \
         --qemu "candidate=$binaries/$candidate/qemu-riscv64" \
         --qemu-commit "baseline=$baseline" --qemu-commit "candidate=$candidate" "${options[@]}"
 done
+
+if [[ -n $summary_file ]]; then
+    printf '\n\n\n=== Combined results ===\n\n'
+    cat -- "$summary_file"
+fi

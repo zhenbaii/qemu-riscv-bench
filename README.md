@@ -20,6 +20,8 @@ The launcher builds a static `qemu-riscv64` from each commit with the same
 configure arguments and restores the checkout after each build. The
 `vsetvli-v1` recipe first runs the [focused program with perf](experiments/vsetvli-v1-program.yml),
 then the [LZ4, zlib, and SQLite builds from the mail](experiments/vsetvli-v1-mail.yml).
+After both stages finish, the terminal repeats their summaries together under
+`Combined results`.
 The package preset uses the original amd64 GCC 14.2.0 bootstrap lock and
 expects `riscv64-linux-gnu-gcc-14`. Both stages automatically pin to the
 lowest logical CPU allowed by the launcher's affinity mask and record the

@@ -15,6 +15,7 @@
 脚本用同一套配置依次构建两个 commit 的静态 `qemu-riscv64`，并恢复原 checkout。
 `vsetvli-v1` recipe 先跑[专项程序和 perf 采样](experiments/vsetvli-v1-program.yml)，
 再跑[邮件中的 LZ4、zlib、SQLite 构建](experiments/vsetvli-v1-mail.yml)。
+两段完成后，终端在 `Combined results` 下集中显示两份摘要。
 构建负载使用原实验的 amd64 GCC 14.2.0 依赖锁，需要 `riscv64-linux-gnu-gcc-14`。
 两段默认都绑定启动进程允许使用的编号最小的逻辑 CPU，并把实际绑核写入 manifest。
 可用 `--affinity CPU` 指定其他 CPU，用 `--dry-run` 预览两组计划。
